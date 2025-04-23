@@ -75,7 +75,15 @@
       opacity: 0.9;
       animation: fadeIn 1.5s ease;
     }
-    
+
+ .logo {
+  display: block;
+  margin: 0 auto;         
+  max-width: 150px;       
+  border-radius: 50%;    
+  object-fit: cover;      
+}
+
     .teacher-profile {
       display: flex;
       align-items: center;
@@ -1118,14 +1126,11 @@
 <body>
   <header>
     <div class="header-content">
-      <h1>Welcome to IWA Page</h1>
+     <img class="logo" src="images/iwalogo.png" alt="IWA Logo">
+      <h1>WELCOME TO IWA PAGE</h1>
       <p>🎯 Our Goal is to Unlock Your "A" Grade in ICT 🌟</p>
-      <div class="teacher-profile">
-        <img src="https://via.placeholder.com/150" alt="HM.AHSHAAN" class="teacher-img">
-        <div class="teacher-info">
-          <p><strong>HM.AHSHAAN</strong></p>
-          <p>BSc (Hons) in AI and DS (UG) [RGU, UK]</p>
-          <p>📞 0742663484</p>
+      <div class="teacher-profile">  
+         
         </div>
       </div>
     </div>
@@ -1158,45 +1163,55 @@
         </div>
       </div>
       
-      <h3 class="section-title animate-slide delay-1">எமது Free Classes நீங்கள் பார்வையிட முடியும்</h3>
-      
-      <div class="video-gallery">
-        <div class="video-card animate-slide delay-1">
-          <div class="video-thumbnail">
-            <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Video Thumbnail">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
-          </div>
-          <div class="video-info">
-            <h3>Grade 10 - Introduction to ICT</h3>
-            <p>Basic concepts of Information Technology</p>
-            <a href="#" class="btn btn-outline" style="margin-top: 1rem; width: 100%;"><i class="fab fa-youtube"></i> Watch Now</a>
-          </div>
-        </div>
-        
-        <div class="video-card animate-slide delay-2">
-          <div class="video-thumbnail">
-            <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Video Thumbnail">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
-          </div>
-          <div class="video-info">
-            <h3>Grade 11 - Programming Basics</h3>
-            <p>Introduction to algorithms and flowcharts</p>
-            <a href="#" class="btn btn-outline" style="margin-top: 1rem; width: 100%;"><i class="fab fa-youtube"></i> Watch Now</a>
-          </div>
-        </div>
-        
-        <div class="video-card animate-slide delay-3">
-          <div class="video-thumbnail">
-            <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Video Thumbnail">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
-          </div>
-          <div class="video-info">
-            <h3>ICT Practical Session</h3>
-            <p>Hands-on with spreadsheet functions</p>
-            <a href="#" class="btn btn-outline" style="margin-top: 1rem; width: 100%;"><i class="fab fa-youtube"></i> Watch Now</a>
-          </div>
-        </div>
-      </div>
+<h3 class="section-title animate-slide delay-1">Our Free Classes You Can Check</h3>
+
+<div class="video-gallery">
+  <!-- Card 1 -->
+  <div class="video-card animate-slide delay-1">
+    <div class="video-thumbnail">
+      <img src="images/g10u3.jpg" alt="Video Thumbnail">
+      <div class="play-icon"><i class="fas fa-play"></i></div>
+    </div>
+    <div class="video-info">
+      <h3>Grade 10 - Introduction to ICT</h3>
+      <p>Basic Concepts</p>
+      <a href="https://www.youtube.com/@ictwithahshaan" target="_blank" class="btn btn-outline" style="margin-top: 1rem; width: 100%;">
+        <i class="fab fa-youtube"></i> Watch Now
+      </a>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="video-card animate-slide delay-2">
+    <div class="video-thumbnail">
+      <img src="images/g10u4.jpg" alt="Video Thumbnail">
+      <div class="play-icon"><i class="fas fa-play"></i></div>
+    </div>
+    <div class="video-info">
+      <h3>Grade 11 - Programming Basics</h3>
+      <p>Algorithms and flowcharts</p>
+      <a href="https://www.youtube.com/@ictwithahshaan" target="_blank" class="btn btn-outline" style="margin-top: 1rem; width: 100%;">
+        <i class="fab fa-youtube"></i> Watch Now
+      </a>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="video-card animate-slide delay-3">
+    <div class="video-thumbnail">
+      <img src="images/g11u5.jpg" alt="Video Thumbnail">
+      <div class="play-icon"><i class="fas fa-play"></i></div>
+    </div>
+    <div class="video-info">
+      <h3>ICT Practical Session</h3>
+      <p>Hands-on with spreadsheet functions</p>
+      <a href="https://www.youtube.com/@ictwithahshaan" target="_blank" class="btn btn-outline" style="margin-top: 1rem; width: 100%;">
+        <i class="fab fa-youtube"></i> Watch Now
+      </a>
+    </div>
+  </div>
+</div>
+
       
       <div class="social-links animate-slide delay-4">
         <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
@@ -1379,7 +1394,7 @@
         <div class="books-container">
           <div class="book-card">
             <div class="book-cover">
-              <img src="https://via.placeholder.com/400x300?text=Grade+10+ICT+Book" alt="Grade 10 ICT Book">
+              <img src="images/g10book.jpg" alt="Grade 10 ICT Book">
               <div class="book-badge">Bestseller</div>
             </div>
             <div class="book-info">
@@ -1394,7 +1409,7 @@
           
           <div class="book-card">
             <div class="book-cover">
-              <img src="https://via.placeholder.com/400x300?text=Grade+11+ICT+Book" alt="Grade 11 ICT Book">
+              <img src="images/g11book.png" alt="Grade 11 ICT Book">
               <div class="book-badge">New Edition</div>
             </div>
             <div class="book-info">
@@ -1416,7 +1431,7 @@
       
       <div class="quote-container">
         <p class="quote">"The expert in anything was once a beginner. Your consistent effort today will become your success story tomorrow."</p>
-        <p class="author">- HM.AHSHAAN</p>
+        <p class="author">- Ahshaan Sir</p>
       </div>
       
       <div class="card">
@@ -1495,11 +1510,11 @@
 
     <!-- About Section -->
     <section id="about" class="animate-fade">
-      <h2 class="section-title">ℹ️ About HM.AHSHAAN</h2>
+      <h2 class="section-title">ℹ️ About</h2>
       
       <div class="about-container">
         <div class="about-img">
-          <img src="https://via.placeholder.com/500x600?text=HM.AHSHAAN" alt="HM.AHSHAAN">
+          <img src="images/sir.jpg" alt="HM.AHSHAAN">
         </div>
         <div class="about-content">
           <h2>HM.AHSHAAN</h2>
