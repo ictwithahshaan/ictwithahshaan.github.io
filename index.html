@@ -587,82 +587,95 @@
       margin: 1rem 0;
     }
     
-    /* Motivation Section */
-    .quote-container {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white;
-      padding: 4rem 3rem;
-      border-radius: 15px;
-      text-align: center;
-      margin: 3rem 0;
-      position: relative;
-      overflow: hidden;
+    /* Student Achievements */
+    .achievements-container {
+      margin-top: 2rem;
     }
-    
-    .quote-container::before {
-      content: '"';
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      font-size: 10rem;
-      color: rgba(255,255,255,0.05);
-      font-family: serif;
-      line-height: 1;
+
+    .year-section {
+      margin-bottom: 3rem;
     }
-    
-    .quote {
-      font-size: 1.8rem;
-      font-style: italic;
+
+    .year-section h3 {
+      color: var(--primary);
       margin-bottom: 1.5rem;
-      position: relative;
-      z-index: 1;
-      line-height: 1.5;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 1.5rem;
     }
-    
-    .author {
-      font-weight: 600;
-      font-size: 1.2rem;
-      position: relative;
-      z-index: 1;
-      opacity: 0.9;
-    }
-    
-    .success-stories {
+
+    .achievement-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 2rem;
-      margin-top: 3rem;
     }
-    
-    .story-card {
+
+    .achievement-card {
       background: white;
-      padding: 2rem;
       border-radius: 12px;
+      overflow: hidden;
       box-shadow: 0 5px 15px rgba(0,0,0,0.08);
       transition: transform 0.3s ease;
+      display: flex;
       border: 1px solid rgba(0, 0, 0, 0.05);
     }
-    
-    .story-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+
+    .achievement-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.12);
     }
-    
-    .story-card h3 {
+
+    .student-photo {
+      width: 120px;
+      position: relative;
+    }
+
+    .student-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .grade-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: var(--accent);
+      color: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .student-info {
+      flex: 1;
+      padding: 1.5rem;
+    }
+
+    .student-info h4 {
       color: var(--primary);
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
+      font-size: 1.2rem;
+    }
+
+    .student-info p {
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
-    
-    .story-card h3 i {
+
+    .student-info i {
       color: var(--accent);
-    }
-    
-    .story-card p {
-      color: var(--text);
-      font-size: 0.95rem;
+      width: 20px;
     }
     
     /* Gallery Section */
@@ -1039,6 +1052,15 @@
       .about-img, .about-content {
         min-width: 100%;
       }
+      
+      .achievement-card {
+        flex-direction: column;
+      }
+      
+      .student-photo {
+        width: 100%;
+        height: 180px;
+      }
     }
     
     @media (max-width: 768px) {
@@ -1113,10 +1135,6 @@
         width: 100%;
       }
       
-      .quote {
-        font-size: 1.4rem;
-      }
-      
       .popup-content {
         padding: 1.8rem;
       }
@@ -1142,7 +1160,7 @@
       <a href="#class"><i class="fas fa-chalkboard-teacher"></i> Class</a>
       <a href="#syllabus"><i class="fas fa-book"></i> Syllabus</a>
       <a href="#books"><i class="fas fa-book-open"></i> Books</a>
-      <a href="#motivation"><i class="fas fa-fire"></i> Motivation</a>
+      <a href="#achievements"><i class="fas fa-trophy"></i> Achievements</a>
       <a href="#gallery"><i class="fas fa-images"></i> Gallery</a>
       <a href="#about"><i class="fas fa-user-tie"></i> About</a>
       <a href="#doubts"><i class="fas fa-question-circle"></i> Doubts</a>
@@ -1210,17 +1228,8 @@
       </a>
     </div>
   </div>
-</div>
+</div><br>
 
-      
-      <div class="social-links animate-slide delay-4">
-        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-telegram"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
-      </div>
-    </section>
 
     <!-- Class Section -->
     <section id="class" class="animate-fade">
@@ -1425,46 +1434,119 @@
       </div>
     </section>
 
-    <!-- Motivation Section -->
-    <section id="motivation" class="animate-fade">
-      <h2 class="section-title">💪 Motivation & Success</h2>
-      
-      <div class="quote-container">
-        <p class="quote">"The expert in anything was once a beginner. Your consistent effort today will become your success story tomorrow."</p>
-        <p class="author">- Ahshaan Sir</p>
-      </div>
+    <!-- Student Achievements Section -->
+    <section id="achievements" class="animate-fade">
+      <h2 class="section-title">🏆 Student Achievements</h2>
       
       <div class="card">
-        <h3><i class="fas fa-lightbulb"></i> Study Strategies for ICT Success</h3>
-        <p>Scoring an 'A' in ICT requires both understanding concepts and practical application. Here are proven strategies from our top students:</p>
+        <p style="text-align: center; margin-bottom: 2rem;">
+          Our students' outstanding results in O/L ICT examinations
+        </p>
         
-        <div class="success-stories">
-          <div class="story-card">
-            <h3><i class="fas fa-user-graduate"></i> Practical First Approach</h3>
-            <p>Start with hands-on practice before theory. Our students who first experiment with software tools develop deeper understanding.</p>
+        <div class="achievements-container">
+          <!-- Year 2023 -->
+          <div class="year-section">
+            <h3><i class="fas fa-trophy"></i> O/L Results 2023</h3>
+            <div class="achievement-cards">
+              <!-- Student 1 -->
+              <div class="achievement-card">
+                <div class="student-photo">
+                  <img src="images/student1.jpg" alt="Student 1">
+                  <div class="grade-badge">A</div>
+                </div>
+                <div class="student-info">
+                  <h4>M. Tharshan</h4>
+                  <p><i class="fas fa-id-card"></i> Index: 12345678</p>
+                  <p><i class="fas fa-school"></i> Jaffna Central College</p>
+                  <p><i class="fas fa-star"></i> Score: 92/100</p>
+                </div>
+              </div>
+              
+              <!-- Student 2 -->
+              <div class="achievement-card">
+                <div class="student-photo">
+                  <img src="images/student2.jpg" alt="Student 2">
+                  <div class="grade-badge">A</div>
+                </div>
+                <div class="student-info">
+                  <h4>K. Niranjana</h4>
+                  <p><i class="fas fa-id-card"></i> Index: 87654321</p>
+                  <p><i class="fas fa-school"></i> Vavuniya Tamil Madhya Maha Vidyalayam</p>
+                  <p><i class="fas fa-star"></i> Score: 89/100</p>
+                </div>
+              </div>
+              
+              <!-- Student 3 -->
+              <div class="achievement-card">
+                <div class="student-photo">
+                  <img src="images/student3.jpg" alt="Student 3">
+                  <div class="grade-badge">A</div>
+                </div>
+                <div class="student-info">
+                  <h4>S. Abinaya</h4>
+                  <p><i class="fas fa-id-card"></i> Index: 54321678</p>
+                  <p><i class="fas fa-school"></i> Hindu Ladies College</p>
+                  <p><i class="fas fa-star"></i> Score: 87/100</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="story-card">
-            <h3><i class="fas fa-tasks"></i> Consistent Revision</h3>
-            <p>Students who review material weekly retain 80% more than those who cram before exams.</p>
-          </div>
-          <div class="story-card">
-            <h3><i class="fas fa-question"></i> Doubt Clearing</h3>
-            <p>Top performers ask questions immediately when confused, preventing knowledge gaps.</p>
+          
+          <!-- Year 2022 -->
+          <div class="year-section" style="margin-top: 3rem;">
+            <h3><i class="fas fa-trophy"></i> O/L Results 2022</h3>
+            <div class="achievement-cards">
+              <!-- Student 1 -->
+              <div class="achievement-card">
+                <div class="student-photo">
+                  <img src="images/student4.jpg" alt="Student 4">
+                  <div class="grade-badge">A</div>
+                </div>
+                <div class="student-info">
+                  <h4>R. Kavin</h4>
+                  <p><i class="fas fa-id-card"></i> Index: 98765432</p>
+                  <p><i class="fas fa-school"></i> St. John's College</p>
+                  <p><i class="fas fa-star"></i> Score: 94/100</p>
+                </div>
+              </div>
+              
+              <!-- Student 2 -->
+              <div class="achievement-card">
+                <div class="student-photo">
+                  <img src="images/student5.jpg" alt="Student 5">
+                  <div class="grade-badge">A</div>
+                </div>
+                <div class="student-info">
+                  <h4>T. Mathushana</h4>
+                  <p><i class="fas fa-id-card"></i> Index: 24681357</p>
+                  <p><i class="fas fa-school"></i> Ramanathan Hindu Ladies College</p>
+                  <p><i class="fas fa-star"></i> Score: 90/100</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         
-        <div style="margin-top: 3rem;">
-          <h3><i class="fas fa-chart-line"></i> Our Student Results</h3>
-          <p>In 2023, 78% of our regular students achieved 'A' grades, with 92% scoring above 'B'.</p>
+        <div style="text-align: center; margin-top: 3rem;">
+          <h3><i class="fas fa-chart-line"></i> Our Success Rate</h3>
+          <p>Over 85% of our regular students achieve 'A' or 'B' grades in O/L ICT examinations</p>
           
-          <div style="background: #f1f5f9; border-radius: 10px; padding: 1.5rem; margin-top: 1.5rem;">
-            <h4 style="color: var(--primary); margin-bottom: 1rem;">Weekly Study Plan Recommendation</h4>
-            <ul style="margin-left: 1.5rem;">
-              <li><strong>Monday:</strong> Review previous week's concepts (30 min)</li>
-              <li><strong>Wednesday:</strong> Practice practical tasks (45 min)</li>
-              <li><strong>Friday:</strong> Attempt past paper questions (1 hour)</li>
-              <li><strong>Sunday:</strong> Attend live class & clarify doubts (1.5 hours)</li>
-            </ul>
+          <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;">
+            <div style="background: rgba(37, 99, 235, 0.1); padding: 1.5rem; border-radius: 10px; min-width: 180px;">
+              <h4 style="color: var(--primary); margin-bottom: 0.5rem;">2023</h4>
+              <p style="font-size: 2rem; color: var(--accent); font-weight: 700; margin: 0;">78%</p>
+              <p style="margin: 0; font-size: 0.9rem;">A Grades</p>
+            </div>
+            <div style="background: rgba(37, 99, 235, 0.1); padding: 1.5rem; border-radius: 10px; min-width: 180px;">
+              <h4 style="color: var(--primary); margin-bottom: 0.5rem;">2022</h4>
+              <p style="font-size: 2rem; color: var(--accent); font-weight: 700; margin: 0;">72%</p>
+              <p style="margin: 0; font-size: 0.9rem;">A Grades</p>
+            </div>
+            <div style="background: rgba(37, 99, 235, 0.1); padding: 1.5rem; border-radius: 10px; min-width: 180px;">
+              <h4 style="color: var(--primary); margin-bottom: 0.5rem;">2021</h4>
+              <p style="font-size: 2rem; color: var(--accent); font-weight: 700; margin: 0;">65%</p>
+              <p style="margin: 0; font-size: 0.9rem;">A Grades</p>
+            </div>
           </div>
         </div>
       </div>
@@ -1575,7 +1657,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section><br>
 
     <!-- Doubts Section -->
     <section id="doubts" class="animate-fade">
@@ -1686,6 +1768,8 @@
         <a href="#class"><i class="fas fa-chalkboard-teacher"></i> Classes</a>
         <a href="#syllabus"><i class="fas fa-book"></i> Syllabus</a>
         <a href="#books"><i class="fas fa-book-open"></i> Books</a>
+        <a href="#achievements"><i class="fas fa-trophy"></i> Achievements</a>
+        <a href="#gallery"><i class="fas fa-images"></i> Gallery</a>
         <a href="#about"><i class="fas fa-info-circle"></i> About</a>
         <a href="#doubts"><i class="fas fa-question"></i> Doubts</a>
       </div>
