@@ -1,0 +1,2239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iWA</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #1e40af;
+      --accent: #f59e0b;
+      --light: #f8fafc;
+      --dark: #1e293b;
+      --text: #334155;
+      --gray: #94a3b8;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+        /* Add this new typewriter animation */
+    .typewriter-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    .typewriter {
+      position: relative;
+      text-align: center;
+    }
+    
+    .typewriter h1 {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: .15em;
+      animation: 
+        typing 3.5s steps(40, end) forwards,
+        blink-caret .75s step-end infinite 3.5s;
+      border-right: .15em solid var(--accent);
+      width: 0;
+    }
+    
+    /* The typing effect */
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    
+    /* The cursor blink effect */
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: var(--accent); }
+    }
+    
+    /* Rocket animation */
+    .rocket {
+      display: inline-block;
+      position: relative;
+      animation: rocket-fly 5s ease-in-out forwards, rocket-float 2s ease-in-out infinite 3.5s;
+    }
+    
+    /* Rocket coming from below and flying upwards */
+    @keyframes rocket-fly {
+      0% {
+        transform: translateY(100vh); /* Start from below the screen */
+      }
+      100% {
+        transform: translateY(0); /* End at the normal position */
+      }
+    }
+    
+    /* Rocket floating effect */
+    @keyframes rocket-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background-color: var(--light);
+      overflow-x: hidden;
+    }
+    
+    /* Header Styles */
+    header {
+      background: linear-gradient(130deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 7px -1px rgba(0, 0, 0, 0.1);
+    }
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover;
+      opacity: 0.1;
+      z-index: 0;
+    }
+    
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      animation: fadeInDown 1s ease;
+    }
+    
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .logo {
+      display: block;
+      margin: 0 auto;         
+      max-width: 130px;       
+      border-radius: 50%;    
+      object-fit: cover;      
+    }
+
+    .teacher-profile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      animation: fadeInUp 1s ease;
+    }
+    
+    .teacher-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .teacher-info {
+      text-align: left;
+    }
+    
+    .teacher-info p {
+      margin: 0.2rem 0;
+    }
+    
+    /* Navigation */
+    nav {
+      background-color: var(--primary-dark);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1.2rem;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      position: relative;
+      font-size: 0.95rem;
+    }
+    
+    nav a:hover, nav a.active {
+      background-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 3px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+    
+    nav a:hover::after {
+      width: 60%;
+    }
+    
+    /* Main Content */
+    .container {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--primary);
+      position: relative;
+      font-size: 2rem;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+    
+    .card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      margin-bottom: 3rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+    }
+    
+    .card h2 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+    
+    .card h3 {
+      color: var(--secondary);
+      margin: 1.5rem 0 1rem;
+    }
+    
+    .card p {
+      margin-bottom: 1.2rem;
+      color: var(--text);
+    }
+    
+    /* Home Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    
+    .hero-img {
+      flex: 1;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+      transition: transform 0.5s ease;
+    }
+    
+    .hero-img:hover {
+      transform: scale(1.02);
+    }
+    
+    .hero-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .hero-content {
+      flex: 1;
+    }
+    
+    .hero-content h2 {
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      line-height: 1.3;
+    }
+    
+    .hero-content p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: var(--text);
+    }
+    
+    .highlight {
+      background-color: rgba(251, 191, 36, 0.2);
+      padding: 0.2rem 0.5rem;
+      border-radius: 5px;
+      color: var(--dark);
+    }
+    
+    .video-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .video-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+    
+    .video-card:hover {
+      transform: translateY(-8px);
+    }
+    
+    .video-thumbnail {
+      position: relative;
+      padding-top: 56.25%;
+      overflow: hidden;
+    }
+    
+    .video-thumbnail img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .video-card:hover .video-thumbnail img {
+      transform: scale(1.05);
+    }
+    
+    .play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 3.5rem;
+      opacity: 0.9;
+      transition: all 0.3s ease;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    
+    .video-card:hover .play-icon {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+    
+    .video-info {
+      padding: 1.5rem;
+    }
+    
+    .video-info h3 {
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    
+    .video-info p {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .social-links a:hover {
+      background: var(--accent);
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Class Section */
+    .class-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    
+    .feature-item {
+      background: rgba(37, 99, 235, 0.05);
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      border-left: 4px solid var(--accent);
+      transition: transform 0.3s ease;
+    }
+    
+    .feature-item:hover {
+      transform: translateY(-5px);
+      background: rgba(37, 99, 235, 0.1);
+    }
+    
+    .feature-item i {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+    
+    .feature-item h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    
+    .feature-item p {
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+    
+    .schedule {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      margin: 3rem 0;
+      flex-wrap: wrap;
+    }
+    
+    .grade-schedule {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      text-align: center;
+      width: 300px;
+      transition: transform 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .grade-schedule:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+    }
+    
+    .grade-schedule h3 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+    
+    .schedule-item {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+    }
+    
+    .schedule-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    
+    .schedule-item p {
+      margin-bottom: 0.5rem;
+    }
+    
+    .schedule-item .day {
+      font-weight: 600;
+      color: var(--secondary);
+    }
+    
+    .schedule-item .time {
+      font-weight: 500;
+      color: var(--primary);
+    }
+    
+    .syllabus-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem 1.8rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      font-size: 1rem;
+      gap: 0.5rem;
+    }
+    
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+    
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .btn-accent {
+      background: var(--accent);
+    }
+    
+    .btn-accent:hover {
+      background: #e67e22;
+    }
+    
+    /* Books Section */
+    .books-container {
+      display: flex;
+      gap: 3rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .book-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      width: 320px;
+      transition: transform 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .book-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+    
+    .book-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(251, 191, 36, 0.1), rgba(37, 99, 235, 0.1));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .book-card:hover::after {
+      opacity: 1;
+    }
+    
+    .book-cover {
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .book-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .book-card:hover .book-cover img {
+      transform: scale(1.05);
+    }
+    
+    .book-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--accent);
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      z-index: 2;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    
+    .book-info {
+      padding: 1.8rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .book-info h3 {
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+      font-size: 1.3rem;
+    }
+    
+    .book-info p {
+      color: var(--text);
+      margin-bottom: 1.2rem;
+      font-size: 0.95rem;
+    }
+    
+    .book-info .price {
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 1.3rem;
+      margin: 1rem 0;
+    }
+    
+    /* Student Achievements */
+    .achievements-container {
+      margin-top: 2rem;
+    }
+
+    .year-section {
+      margin-bottom: 3rem;
+    }
+
+    .year-section h3 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 1.5rem;
+    }
+
+    .achievement-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .achievement-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+      display: flex;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .achievement-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+    }
+
+    .student-photo {
+      width: 120px;
+      position: relative;
+    }
+
+    .student-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .grade-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: var(--accent);
+      color: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .student-info {
+      flex: 1;
+      padding: 1.5rem;
+    }
+
+    .student-info h4 {
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+      font-size: 1.2rem;
+    }
+
+    .student-info p {
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .student-info i {
+      color: var(--accent);
+      width: 20px;
+    }
+    
+    /* Gallery Section */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.8rem;
+      margin-top: 3rem;
+    }
+    
+    .gallery-item {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      aspect-ratio: 1;
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover {
+      transform: scale(1.03);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 1.2rem;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover .gallery-caption {
+      transform: translateY(0);
+    }
+    
+    /* About Section */
+    .about-container {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      margin-top: 3rem;
+    }
+    
+    .about-img {
+      flex: 1;
+      min-width: 350px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+      position: relative;
+    }
+    
+    .about-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    
+    .about-img:hover img {
+      transform: scale(1.05);
+    }
+    
+    .about-content {
+      flex: 2;
+      min-width: 300px;
+    }
+    
+    .about-content h2 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+    }
+    
+    .about-content p {
+      margin-bottom: 1.2rem;
+    }
+    
+    .teaching-approach {
+      margin-top: 2rem;
+    }
+    
+    .approach-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+      align-items: flex-start;
+    }
+    
+    .approach-item i {
+      color: var(--accent);
+      font-size: 1.2rem;
+      margin-top: 0.2rem;
+    }
+    
+    /* Doubts Section */
+    .doubt-form {
+      max-width: 700px;
+      margin: 3rem auto;
+    }
+    
+    .form-group {
+      margin-bottom: 1.8rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.8rem;
+      font-weight: 500;
+      color: var(--primary);
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 0.9rem 1.2rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    }
+    
+    textarea.form-control {
+      min-height: 180px;
+      resize: vertical;
+    }
+    
+    .file-upload {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    
+    .file-upload-btn {
+      background: #f1f5f9;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      color: var(--primary);
+      border: 1px dashed var(--primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .file-upload-btn:hover {
+      background: #e2e8f0;
+    }
+    
+    #fileName {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+    
+    /* Feedback Section */
+    .feedback-container {
+      margin-top: 3rem;
+    }
+    
+    .feedback-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .feedback-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+    
+    .feedback-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    }
+    
+    .feedback-card::before {
+      content: '"';
+      position: absolute;
+      top: 1rem;
+      left: 1.5rem;
+      font-size: 4rem;
+      color: rgba(37, 99, 235, 0.1);
+      font-family: serif;
+      line-height: 1;
+    }
+    
+    .feedback-content {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .feedback-text {
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      color: var(--text);
+    }
+    
+    .feedback-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .feedback-author-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+    }
+    
+    .feedback-author-info h4 {
+      color: var(--primary);
+      margin-bottom: 0.2rem;
+    }
+    
+    .feedback-author-info p {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+    
+    .feedback-rating {
+      color: var(--accent);
+      margin-top: 0.5rem;
+    }
+    
+    /* Student Statistics */
+    .stats-container {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+    }
+    
+    .stat-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      min-width: 200px;
+      transition: transform 0.3s ease;
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .stat-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      line-height: 1;
+    }
+    
+    .stat-label {
+      color: var(--text);
+      font-size: 1rem;
+    }
+    
+    .stat-grade {
+      font-size: 0.9rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+    
+    /* Popup */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .popup.show {
+      display: flex;
+      opacity: 1;
+    }
+    
+    .popup-content {
+      background: white;
+      border-radius: 15px;
+      padding: 2.5rem;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      transform: translateY(-50px);
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+    
+    .popup.show .popup-content {
+      transform: translateY(0);
+    }
+    
+    .popup-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    
+    .popup-header h3 {
+      color: var(--primary);
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    
+    .close-btn {
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--gray);
+      transition: color 0.3s ease;
+      line-height: 1;
+    }
+    
+    .close-btn:hover {
+      color: var(--accent);
+    }
+    
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      text-align: center;
+      padding: 3rem 0;
+      margin-top: 5rem;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .footer-logo {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+    
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    
+    .footer-links a:hover {
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+    
+    .footer-contact {
+      margin: 2rem 0;
+    }
+    
+    .footer-contact p {
+      margin: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    
+    .copyright {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 999;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      background: #e67e22;
+      transform: translateY(-3px) scale(1.1);
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate-fade {
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+    
+    .animate-slide {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.4s; }
+    .delay-3 { animation-delay: 0.6s; }
+    .delay-4 { animation-delay: 0.8s; }
+    
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .hero {
+        flex-direction: column;
+      }
+      
+      .about-container {
+        flex-direction: column;
+      }
+      
+      .about-img, .about-content {
+        min-width: 100%;
+      }
+      
+      .achievement-card {
+        flex-direction: column;
+      }
+      
+      .student-photo {
+        width: 100%;
+        height: 180px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      .section-title {
+        font-size: 1.8rem;
+      }
+      
+      .card {
+        padding: 2rem;
+      }
+      
+      .teacher-profile {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .nav-container {
+        gap: 0.8rem;
+      }
+      
+      nav a {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
+      
+      .syllabus-buttons {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .btn {
+        padding: 0.8rem 1.5rem;
+      }
+      
+      .popup-content {
+        padding: 2rem;
+      }
+      
+      .stat-card {
+        min-width: 150px;
+        padding: 1.5rem;
+      }
+      
+      .stat-value {
+        font-size: 2rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .header-content {
+        padding: 0 1.5rem;
+      }
+      
+      .container {
+        padding: 0 1.5rem;
+      }
+      
+      .card {
+        padding: 1.8rem;
+      }
+      
+      .section-title {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+      }
+      
+      .teacher-img {
+        width: 80px;
+        height: 80px;
+      }
+      
+      .grade-schedule {
+        width: 100%;
+      }
+      
+      .book-card {
+        width: 100%;
+      }
+      
+      .popup-content {
+        padding: 1.8rem;
+      }
+      
+      .stat-card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+
+      <!-- Updated typewriter heading -->
+      <div class="typewriter-container">
+        <div class="typewriter">
+          <h1>Hello Students, Welcome <span class="rocket">🚀</span></h1>
+        </div>
+      </div>
+      
+      <p>🎯 Our Goal is to Unlock Your "A" Grade in ICT 🌟</p>
+      <div class="teacher-profile">  
+        <!-- Your teacher profile content -->
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-container">
+      <a href="#home" class="active"><i class="fas fa-home"></i> Home</a>
+      <a href="#class"><i class="fas fa-chalkboard-teacher"></i> Class</a>
+      <a href="#syllabus"><i class="fas fa-book"></i> Syllabus</a>
+      <a href="#books"><i class="fas fa-book-open"></i> Books</a>
+      <a href="#achievements"><i class="fas fa-trophy"></i> Achievements</a>
+      <a href="#gallery"><i class="fas fa-images"></i> Gallery</a>
+      <a href="#about"><i class="fas fa-user-tie"></i> About</a>
+      <a href="#feedback"><i class="fas fa-comment-alt"></i> Feedback</a>
+      <a href="#doubts"><i class="fas fa-question-circle"></i> Doubts</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Home Section -->
+    <section id="home" class="animate-fade">
+      <div class="hero">
+        <div class="hero-img">
+          <img src="images/clsroom.jpg" alt="ICT Class">
+        </div>
+        <div class="hero-content">
+          <h3> 🎯 தரம் 10 / 11 ICT தேர்ந்தெடுத்த மாணவரா நீங்கள் ?  
+👉 இது உங்களுக்கு தக்க வாய்ப்பு! 🤩
+</h3>
+          <p>உமது தற்போதைய நிலையினை மாற்றியமைத்து ICT பாடத்தில் நீங்கள் “A” சித்தியினை பெற விரும்பினால் இன்றே iWA வகுப்பில் இணைந்துகொள்ளுங்கள்.</p>
+          <a href="#class" class="btn btn-accent"><i class="fas fa-info-circle"></i> More Info</a>
+        </div>
+      </div>
+      
+      <h3 class="section-title animate-slide delay-1">Our Free Classes You Can Check</h3>
+
+      <div class="video-gallery">
+        <!-- Card 1 -->
+        <div class="video-card animate-slide delay-1">
+          <div class="video-thumbnail">
+            <img src="images/g10u3.jpg" alt="Video Thumbnail">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="video-info">
+            <h3>Grade 10 - Unit 03 1st Class</h3>
+            <p>Number System</p>
+            <a href="https://www.youtube.com/@ictwithahshaan" target="_blank" class="btn btn-outline" style="margin-top: 1rem; width: 100%;">
+              <i class="fab fa-youtube"></i> Watch Now
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="video-card animate-slide delay-2">
+          <div class="video-thumbnail">
+            <img src="images/g10u4.jpg" alt="Video Thumbnail">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="video-info">
+            <h3>Grade 10 - Unit 04 1st Class</h3>
+            <p>Logic Gates</p>
+            <a href="https://www.youtube.com/@ictwithahshaan" target="_blank" class="btn btn-outline" style="margin-top: 1rem; width: 100%;">
+              <i class="fab fa-youtube"></i> Watch Now
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="video-card animate-slide delay-3">
+          <div class="video-thumbnail">
+            <img src="images/g11u5.jpg" alt="Video Thumbnail">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="video-info">
+            <h3>Grade 11 - Unit 05 1st Class</h3>
+            <p>Hyper Text Markup Language</p>
+            <a href="https://www.youtube.com/@ictwithahshaan" target="_blank" class="btn btn-outline" style="margin-top: 1rem; width: 100%;">
+              <i class="fab fa-youtube"></i> Watch Now
+            </a>
+          </div>
+        </div>
+      </div><br>
+
+      <!-- Student Statistics -->
+      <div class="card" style="margin-top: 3rem;">
+        <h2 class="section-title">Our Student Community</h2>
+        <div class="stats-container">
+          <div class="stat-card">
+            <div class="stat-value">25+</div>
+            <div class="stat-label">Grade 10 Students</div>
+            <div class="stat-grade">2024-2025</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">20+</div>
+            <div class="stat-label">Grade 11 Students</div>
+            <div class="stat-grade">2024-2025</div>
+          </div>
+    </section>
+
+    <!-- Class Section -->
+    <section id="class" class="animate-fade">
+      <h2 class="section-title">Zoom Live CLasses - Tamil Medium</h2>
+      
+      <div class="card">
+        <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">
+          - ICT பாடத்தில் உள்ள அலகுகள், கஷ்டம் என்று கூறும் மாணவர்கள் கூட ICT பாடத்தை ஓர் இலகுவான பாடம் என்று கூறும் அளவிற்கு சிறந்த முறையில் கற்பிக்கப்படும். -
+        </p>
+        
+        <div class="class-features">
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <h3>Complete Coverage</h3>
+            <p>All syllabus units covered before term exams with detailed explanations</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-laptop-code"></i>
+            <h3>Live Practicals</h3>
+            <p>Real-time computer demonstrations for better understanding</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-clipboard-check"></i>
+            <h3>Assessments</h3>
+            <p>Regular tests to track progress and identify areas for improvement</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-file-alt"></i>
+            <h3>Past Papers</h3>
+            <p>Detailed analysis of previous exam questions and model answers</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-video"></i>
+            <h3>Recordings</h3>
+            <p>Access to all class recordings for revision</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-comments"></i>
+            <h3>Doubt Support</h3>
+            <p>24/7 WhatsApp support for immediate clarification</p>
+          </div>
+        </div>
+        
+        <div class="schedule">
+          <div class="grade-schedule" style="background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(251, 191, 36, 0.05));">
+            <h3><i class="fas fa-graduation-cap"></i> GRADE - 10</h3>
+            <div class="schedule-item">
+              <p class="day">Saturday</p>
+              <p class="time">07.00 PM - 08.30 PM</p>
+            </div>
+            <div class="schedule-item">
+              <p class="day">Sunday</p>
+              <p class="time">07.00 PM - 08.30 PM</p>
+            </div>
+            <button onclick="openEnrollForm('Grade 10')" class="btn btn-accent" style="width: 100%; margin-top: 1.5rem;">
+              <i class="fas fa-user-plus"></i> Enroll Now
+            </button>
+          </div>
+          
+          <div class="grade-schedule" style="background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(251, 191, 36, 0.05));">
+            <h3><i class="fas fa-graduation-cap"></i> GRADE - 11</h3>
+            <div class="schedule-item">
+              <p class="day">Saturday</p>
+              <p class="time">08.00 PM - 09.30 PM</p>
+            </div>
+            <div class="schedule-item">
+              <p class="day">Sunday</p>
+              <p class="time">08.00 PM - 09.30 PM</p>
+            </div>
+            <button onclick="openEnrollForm('Grade 11')" class="btn btn-accent" style="width: 100%; margin-top: 1.5rem;">
+              <i class="fas fa-user-plus"></i> Enroll Now
+            </button>
+          </div>
+        </div>
+        
+        <div class="syllabus-buttons">
+          <a href="#syllabus" class="btn btn-outline"><i class="fas fa-book"></i> Grade 10 Syllabus</a>
+          <a href="#syllabus" class="btn btn-outline"><i class="fas fa-book"></i> Grade 11 Syllabus</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Syllabus Section -->
+    <section id="syllabus" class="animate-fade">
+      <h2 class="section-title">ICT Syllabus</h2>
+      
+      <div class="card">
+        <div class="grade-syllabus" style="background: linear-gradient(135deg, rgba(37, 99, 235, 0.03), rgba(251, 191, 36, 0.03)); padding: 2rem; border-radius: 12px;">
+          <h3><i class="fas fa-graduation-cap"></i> Grade 10 Syllabus</h3>
+          <div class="units-container">
+            <div class="unit">
+              <h4>Unit 1: தகவல் மற்றும் தொடர்பாடல் தொழினுட்பவியல்</h4>
+              <p>Introduction to ICT concepts and communication technologies</p>
+            </div>
+            <div class="unit">
+              <h4>Unit 2: கணினியை இனங்காண்போம்</h4>
+              <p>Understanding computer systems and components</p>
+            </div>
+            <div class="unit">
+              <h4>Unit 3: கணினியில் தரவுகள் எடுத்துக்காட்டப்படும் முறைகள்</h4>
+              <p>Data representation methods in computers</p>
+            </div>
+            <div class="unit">
+              <h4>Unit 4: தருக்க வாயில்களும் பூலியன் தர்க்கங்களும்</h4>
+              <p>Logic gates and Boolean algebra</p>
+            </div>
+            <div class="unit">
+              <h4>Unit 5: பணிசெயல் முறைமைகள்</h4>
+              <p>Operating systems fundamentals</p>
+            </div>
+            <div class="unit">
+              <h4>Unit 6: சொல் முறைவழிப்படுத்தல்</h4>
+              <p>Word processing techniques</p>
+            </div>
+            <div class="unit">
+              <h4>Unit 7: இலத்திரனியல் விரிதாள்கள்</h4>
+              <p>Spreadsheet applications</p>
+            </div>
+            <div class="unit">
+              <h4>Unit 8: இலத்திரனியல் நிகழ்த்துகை</h4>
+              <p>Electronic presentations</p>
+            </div>
+            <div class="unit">
+              <h4>Unit 9: தரவுத்தளம்</h4>
+              <p>Database management systems</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="grade-syllabus" style="background: linear-gradient(135deg, rgba(37, 99, 235, 0.03), rgba(251, 191, 36, 0.03)); padding: 2rem; border-radius: 12px; margin-top: 3rem;">
+          <h3><i class="fas fa-graduation-cap"></i> Grade 11 Syllabus</h3>
+          <div class="units-container">
+            <div class="unit">
+              <h4>Unit 1: பிரச்சினைகளைத் தீர்ப்பதற்குச் செய்நிரல்களை எழுதுதல்</h4>
+              <p>Problem solving and programming</p>
+            </div>
+            <div class="unit">
+              <h4>Unit 2: தகவல் முறைமை விருத்திச் செயன்முறை</h4>
+              <p>Information system development process</p>
+            </div>
+            <div class="unit">
+              <h4>Unit 3: இணையம் மற்றும் மின்னஞ்சல்</h4>
+              <p>Internet and email technologies</p>
+            </div>
+            <div class="unit">
+              <h4>Unit 4: பல்லூடகப் பயன்பாடு</h4>
+              <p>Multimedia applications</p>
+            </div>
+            <div class="unit">
+              <h4>Unit 5: எளிய இணையத்தளங்களை வடிவமைத்தல்</h4>
+              <p>Basic web design principles</p>
+            </div>
+            <div class="unit">
+              <h4>Unit 6: சமூகமும் தகவல் மற்றும் தொடர்பாடல் தொழினுட்பவியலும்</h4>
+              <p>Social impacts of ICT</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Books Section -->
+    <section id="books" class="animate-fade">
+      <h2 class="section-title">Our Books</h2>
+      
+      <div class="card" style="background: linear-gradient(135deg, rgba(37, 99, 235, 0.03), rgba(251, 191, 36, 0.03));">
+        <p style="text-align: center; margin-bottom: 2rem;">
+          👉 ICT பாடத்தில் உள்ள அலகுகள் அனைத்தையும் மாணவர்கள் இலகுவாக புரிந்து கொள்ளும் வகையில் சிறு சிறு பகுதிகளாக மாற்றியமைக்கப்பட்டு
+ இந்த Short Notes Book வெளியிடப்பட்டுள்ளது. விரைவில் Grade 11 Book வெளியிடப்படும். 
+        </p>
+        
+        <div class="books-container">
+          <div class="book-card">
+            <div class="book-cover">
+              <img src="images/g10book.jpg" alt="Grade 10 ICT Book">
+              <div class="book-badge">New Edition</div>
+            </div>
+            <div class="book-info">
+              <h3>ICT Grade 10 - Complete Guide (Tamil Medium)</h3>
+              <p>தரம் 10 பாடப்பரப்பிலுள்ள 09 அலகுகளையும் Short Notes ஆக மாற்றி இந்த புத்தகம் வடிவமைக்கப்ப்ட்டுள்ளது.
+</p>
+              <div class="price">Rs. 1,200</div>
+              <button onclick="openEnrollForm('Grade 10 Book')" class="btn btn-accent" style="width: 100%;">
+                <i class="fas fa-shopping-cart"></i> Order Now
+              </button>
+            </div>
+          </div>
+          
+          <div class="book-card">
+            <div class="book-cover">
+              <img src="images/g11book.png" alt="Grade 11 ICT Book">
+              <div class="book-badge">New Edition</div>
+            </div>
+            <div class="book-info">
+              <h3>ICT Grade 11 - Complete Guide (Tamil Medium)</h3>
+              <p>தரம் 11 பாடப்பரப்பிலுள்ள 06 அலகுகளையும் Short Notes ஆக மாற்றி இந்த புத்தகம் வடிவமைக்கப்ப்ட்டுள்ளது.
+</p>
+              <div class="price">Rs. 1,200</div>
+              <button onclick="openEnrollForm('Grade 11 Book')" class="btn btn-accent" style="width: 100%;">
+                <i class="fas fa-shopping-cart"></i> Order Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Student Achievements Section -->
+    <section id="achievements" class="animate-fade">
+      <h2 class="section-title">Student Achievements</h2>
+      
+      <div class="card">
+        <p style="text-align: center; margin-bottom: 2rem;">
+          👉 கடந்த வருடங்களில் எம்மிடம் கற்று O/L பரீட்சையில் சிறந்த புள்ளிகளைப் பெற்றுக்கொண்ட மாணவர்கள் விபரம்.
+
+        </p>
+        
+        <div class="achievements-container">
+          <!-- Year 2023 -->
+          <div class="year-section">
+            <h3><i class="fas fa-trophy"></i> O/L Results 2023</h3>
+            <div class="achievement-cards">
+              <!-- Student 1 -->
+              <div class="achievement-card">
+                <div class="student-photo">
+                  <img src="images/stu1.jpg" alt="Student 1">
+                  <div class="grade-badge">A</div>
+                </div>
+                <div class="student-info">
+                  <h4>A. Ramsan</h4>
+                  <p><i class="fas fa-id-card"></i> Index: 12345678</p>
+                  <p><i class="fas fa-school"></i> Jaffna Central College</p>
+                  <p><i class="fas fa-star"></i> Score: 75+</p>
+                </div>
+              </div>
+              
+              <!-- Student 2 -->
+              <div class="achievement-card">
+                <div class="student-photo">
+                  <img src="images/stu4.jpg" alt="Student 2">
+                  <div class="grade-badge">A</div>
+                </div>
+                <div class="student-info">
+                  <h4>M. Fathima</h4>
+                  <p><i class="fas fa-id-card"></i> Index: 87654321</p>
+                  <p><i class="fas fa-school"></i> Vavuniya Tamil Madhya Maha Vidyalayam</p>
+                  <p><i class="fas fa-star"></i> Score: 75+</p>
+                </div>
+              </div>
+              
+              <!-- Student 3 -->
+              <div class="achievement-card">
+                <div class="student-photo">
+                  <img src="images/stu2.jpg" alt="Student 3">
+                  <div class="grade-badge">B</div>
+                </div>
+                <div class="student-info">
+                  <h4>M. Zainab</h4>
+                  <p><i class="fas fa-id-card"></i> Index: 54321678</p>
+                  <p><i class="fas fa-school"></i> Muslim Ladies College</p>
+                  <p><i class="fas fa-star"></i> Score: 65+</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Year 2022 -->
+          <div class="year-section" style="margin-top: 3rem;">
+            <h3><i class="fas fa-trophy"></i> O/L Results 2022</h3>
+            <div class="achievement-cards">
+              <!-- Student 1 -->
+              <div class="achievement-card">
+                <div class="student-photo">
+                  <img src="images/stu3.jpg" alt="Student 4">
+                  <div class="grade-badge">A</div>
+                </div>
+                <div class="student-info">
+                  <h4>M. Vidura</h4>
+                  <p><i class="fas fa-id-card"></i> Index: 98765432</p>
+                  <p><i class="fas fa-school"></i> St. John's College</p>
+                  <p><i class="fas fa-star"></i> Score: 75+</p>
+                </div>
+              </div>
+              
+              <!-- Student 2 -->
+              <div class="achievement-card">
+                <div class="student-photo">
+                  <img src="images/stu5.jpg" alt="Student 5">
+                  <div class="grade-badge">B</div>
+                </div>
+                <div class="student-info">
+                  <h4>P. Yehansa</h4>
+                  <p><i class="fas fa-id-card"></i> Index: 24681357</p>
+                  <p><i class="fas fa-school"></i> Ramanathan Hindu Ladies College</p>
+                  <p><i class="fas fa-star"></i> Score: 65+</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+          <h3><i class="fas fa-chart-line"></i> Our Success Rate</h3>
+          <p>Over 85% of our regular students achieve 'A' or 'B' grades in O/L ICT examinations</p>
+          
+          <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;">
+            <div style="background: rgba(37, 99, 235, 0.1); padding: 1.5rem; border-radius: 10px; min-width: 180px;">
+              <h4 style="color: var(--primary); margin-bottom: 0.5rem;">2023</h4>
+              <p style="font-size: 2rem; color: var(--accent); font-weight: 700; margin: 0;">78%</p>
+              <p style="margin: 0; font-size: 0.9rem;">A Grades</p>
+            </div>
+            <div style="background: rgba(37, 99, 235, 0.1); padding: 1.5rem; border-radius: 10px; min-width: 180px;">
+              <h4 style="color: var(--primary); margin-bottom: 0.5rem;">2022</h4>
+              <p style="font-size: 2rem; color: var(--accent); font-weight: 700; margin: 0;">72%</p>
+              <p style="margin: 0; font-size: 0.9rem;">A Grades</p>
+            </div>
+                  </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="animate-fade">
+      <h2 class="section-title">Class Pictures</h2>
+      
+      <div class="card">
+        <p style="text-align: center; margin-bottom: 2rem;">
+          👉 நடந்து முடிந்த  Zoom வகுப்புக்களின் Pictures.
+        </p>
+        
+        <div class="gallery">
+          <div class="gallery-item">
+            <img src="images/cls1.jpg" alt="Class Photo">
+            <div class="gallery-caption">G10 Unit- 01 Theory Class</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/cls2.png" alt="Class Photo">
+            <div class="gallery-caption">G10 Unit - 04 Theory Class</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/cls3.jpg" alt="Class Photo">
+            <div class="gallery-caption">G10 Unit - 05 Theory Class</div>
+          </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="animate-fade">
+      <h2 class="section-title">ℹ️ About</h2>
+      
+      <div class="card">
+        <div class="about-container">
+          <div class="about-img" style="text-align: center;">
+            <img src="images/sir.jpg" alt="HM.AHSHAAN" style="max-width: 350px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+            <div style="margin-top: 2rem;">
+              <h3 style="color: var(--primary);">HM.AHSHAAN</h3>
+              <p><strong>BSc (Hons) in Artificial Intelligence and Data Science (UG)</strong></p>
+              <p>Robert Gordon University, UK</p>
+              <p style="margin-top: 1rem;"><i class="fas fa-phone-alt"></i> <strong>0742663484</strong></p>
+            </div>
+          </div>
+          <div class="about-content">
+            <h2>Not Just a Teacher — A Partner in Your Success.</h2>
+            <p>With over 2 years of teaching experience specializing in ICT for Tamil-medium students, I've developed methods that make complex technical concepts accessible and engaging.</p>
+            
+            <div class="teaching-approach">
+              <h3><i class="fas fa-chalkboard-teacher"></i> Teaching Approach</h3>
+              
+              <div class="approach-item">
+                <i class="fas fa-check-circle"></i>
+                <div>
+                  <h4>Conceptual Clarity</h4>
+                  <p>Breaking down technical jargon into simple Tamil explanations with real-world analogies.</p>
+                </div>
+              </div>
+              
+              <div class="approach-item">
+                <i class="fas fa-check-circle"></i>
+                <div>
+                  <h4>Practical Focus</h4>
+                  <p>70% of class time dedicated to hands-on software practice and problem-solving.</p>
+                </div>
+              </div>
+              
+              <div class="approach-item">
+                <i class="fas fa-check-circle"></i>
+                <div>
+                  <h4>Exam Strategy</h4>
+                  <p>Teaching answer presentation techniques that maximize marks in government exams.</p>
+                </div>
+              </div>
+              
+              <div class="approach-item">
+                <i class="fas fa-check-circle"></i>
+                <div>
+                  <h4>Continuous Support</h4>
+                  <p>24/7 doubt clarification through WhatsApp and Telegram channels.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div style="margin-top: 2.5rem;">
+              <h3><i class="fas fa-users"></i> Student Community</h3>
+              <p>Join our growing community of 50+ students across Sri Lanka who are mastering ICT in Tamil.</p>
+              
+             <div class="social-links" style="justify-content: flex-start; margin-top: 1.5rem;">
+  <a href="https://www.facebook.com/share/1FcYxFZ5u4/" target="_blank"><i class="fab fa-facebook"></i></a>
+  <a href="https://t.me/Mohamed_Ahshaan" target="_blank"><i class="fab fa-telegram"></i></a>
+  <a href="https://wa.me/94742663484" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://www.tiktok.com/@ictwithahshaan" target="_blank"><i class="fab fa-tiktok"></i></a>
+  <a href="https://www.youtube.com/@ictwithahshaan" target="_blank"><i class="fab fa-youtube"></i></a>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section id="feedback" class="animate-fade">
+      <h2 class="section-title">💬 Student Feedback</h2>
+      
+      <div class="card">
+        <p style="text-align: center; margin-bottom: 2rem;">
+          What our students say about our ICT classes
+        </p>
+        
+        <div class="feedback-container">
+          <div class="feedback-grid">
+            <!-- Feedback 1 -->
+            <div class="feedback-card">
+              <div class="feedback-content">
+                <p class="feedback-text">"Sir's teaching method is excellent! He explains complex ICT concepts in simple Tamil that even a beginner can understand. My grade improved from C to A after joining his classes."</p>
+                <div class="feedback-author">
+                  <img src="images/ug.jpg" alt="Student" class="feedback-author-img">
+                  <div class="feedback-author-info">
+                    <h4>K. Saranya</h4>
+                    <p>Grade 11 Student</p>
+                    <div class="feedback-rating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Feedback 2 -->
+            <div class="feedback-card">
+              <div class="feedback-content">
+                <p class="feedback-text">"The practical sessions are incredibly helpful. Sir shows each step clearly and gives us time to practice during class. The WhatsApp support for doubts is a game-changer!"</p>
+                <div class="feedback-author">
+                  <img src="images/ug.jpg" alt="Student" class="feedback-author-img">
+                  <div class="feedback-author-info">
+                    <h4>M. Dinesh</h4>
+                    <p>Grade 10 Student</p>
+                    <div class="feedback-rating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Feedback 3 -->
+            <div class="feedback-card">
+              <div class="feedback-content">
+                <p class="feedback-text">"The book is very well organized with clear examples. Combined with the classes, it helped me score 92 in 1st Term ICT. Highly recommended for Tamil medium students!"</p>
+                <div class="feedback-author">
+                  <img src="images/ug.jpg" alt="Student" class="feedback-author-img">
+                  <div class="feedback-author-info">
+                    <h4>S. Priya</h4>
+                    <p>Grade 10 Student</p>
+                    <div class="feedback-rating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half-alt"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Doubts Section -->
+    <section id="doubts" class="animate-fade">
+      <h2 class="section-title">❓ Ask Your Doubts</h2>
+      
+      <div class="card">
+        <div class="doubt-form">
+          <p style="text-align: center; margin-bottom: 2rem;">
+            Get personalized clarification on any ICT concept within 24 hours.
+          </p>
+          
+          <div class="form-group">
+            <label for="studentName"><i class="fas fa-user"></i> Your Name</label>
+            <input type="text" id="studentName" class="form-control" placeholder="Enter your full name">
+          </div>
+          
+          <div class="form-group">
+            <label for="studentGrade"><i class="fas fa-graduation-cap"></i> Grade</label>
+            <select id="studentGrade" class="form-control">
+              <option value="">Select your grade</option>
+              <option value="10">Grade 10</option>
+              <option value="11">Grade 11</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="doubtText"><i class="fas fa-question-circle"></i> Your Doubt</label>
+            <textarea id="doubtText" class="form-control" placeholder="Describe your doubt in detail..."></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label><i class="fas fa-image"></i> Upload Screenshot (Optional)</label>
+            <div class="file-upload">
+              <input type="file" id="doubtImage" style="display: none;">
+              <label for="doubtImage" class="file-upload-btn">
+                <i class="fas fa-cloud-upload-alt"></i> Choose File
+              </label>
+              <span id="fileName">No file chosen</span>
+            </div>
+          </div>
+          
+          <button onclick="sendDoubt()" class="btn btn-accent" style="width: 100%; margin-top: 1rem;">
+            <i class="fas fa-paper-plane"></i> Submit Doubt
+          </button>
+          
+          <p style="text-align: center; margin-top: 1.5rem; color: var(--gray); font-size: 0.9rem;">
+            <i class="fas fa-info-circle"></i> Responses typically within 2-12 hours via WhatsApp
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Enrollment Popup -->
+  <div id="enrollForm" class="popup">
+    <div class="popup-content">
+      <div class="popup-header">
+        <h3>Enrollment Form</h3>
+        <button class="close-btn" onclick="closeEnrollForm()">&times;</button>
+      </div>
+      <div class="form-group">
+        <label for="sname"><i class="fas fa-user"></i> Student Name</label>
+        <input type="text" id="sname" class="form-control" placeholder="Enter student name" required>
+      </div>
+      <div class="form-group">
+        <label for="sschool"><i class="fas fa-school"></i> School</label>
+        <input type="text" id="sschool" class="form-control" placeholder="Enter school name" required>
+      </div>
+      <div class="form-group">
+        <label for="sgrade"><i class="fas fa-graduation-cap"></i> Grade</label>
+        <select id="sgrade" class="form-control" required>
+          <option value="">Select grade</option>
+          <option value="10">Grade 10</option>
+          <option value="11">Grade 11</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="scity"><i class="fas fa-city"></i> City</label>
+        <input type="text" id="scity" class="form-control" placeholder="Enter your city" required>
+      </div>
+      <div class="form-group">
+        <label for="swhatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Number</label>
+        <input type="text" id="swhatsapp" class="form-control" placeholder="Enter WhatsApp number with country code" required>
+      </div>
+      <button onclick="sendEnrollment()" class="btn btn-accent" style="width: 100%;">
+        <i class="fas fa-paper-plane"></i> Submit Enrollment
+      </button>
+      <p style="text-align: center; margin-top: 1rem; color: var(--gray); font-size: 0.9rem;">
+        We'll contact you within 24 hours with class details
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">ICT with Ahshaan</div>
+      <p>Unlock Your 'A' Grade in ICT</p>
+      
+      <div class="footer-contact">
+        <p><i class="fas fa-user-tie"></i> HM.AHSHAAN</p>
+        <p><i class="fas fa-graduation-cap"></i> BSc (Hons) in AI and DS (UG) [RGU, UK]</p>
+        <p><i class="fas fa-phone-alt"></i> 0742663484</p>
+      </div>
+      
+      <div class="footer-links">
+        <a href="#home"><i class="fas fa-home"></i> Home</a>
+        <a href="#class"><i class="fas fa-chalkboard-teacher"></i> Classes</a>
+        <a href="#syllabus"><i class="fas fa-book"></i> Syllabus</a>
+        <a href="#books"><i class="fas fa-book-open"></i> Books</a>
+        <a href="#achievements"><i class="fas fa-trophy"></i> Achievements</a>
+        <a href="#gallery"><i class="fas fa-images"></i> Gallery</a>
+        <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+        <a href="#feedback"><i class="fas fa-comment-alt"></i> Feedback</a>
+        <a href="#doubts"><i class="fas fa-question"></i> Doubts</a>
+      </div>
+      
+     <div class="social-links">
+  <a href="https://www.facebook.com/share/1FcYxFZ5u4/" target="_blank"><i class="fab fa-facebook"></i></a> 
+  <a href="https://t.me/ictwithahshaan" target="_blank"><i class="fab fa-telegram"></i></a> 
+  <a href="https://wa.me/+94742663484" target="_blank"><i class="fab fa-whatsapp"></i></a> 
+  <a href="https://youtube.com/@ictwithahshaan" target="_blank"><i class="fab fa-youtube"></i></a> 
+</div>
+
+      
+      <p class="copyright">© 2025 ICT with Ahshaan. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Remove active class from all nav items
+        document.querySelectorAll('nav a').forEach(navItem => {
+          navItem.classList.remove('active');
+        });
+        
+        // Add active class to clicked nav item
+        this.classList.add('active');
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        window.scrollTo({
+          top: targetElement.offsetTop - 100,
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Show back to top button when scrolling
+    window.addEventListener('scroll', function() {
+      const backToTop = document.getElementById('backToTop');
+      if (window.pageYOffset > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+    
+    // Back to top functionality
+    document.getElementById('backToTop').addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Enrollment form functions
+    let currentEnrollmentType = '';
+    
+    function openEnrollForm(type = '') {
+      currentEnrollmentType = type;
+      const form = document.getElementById('enrollForm');
+      form.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeEnrollForm() {
+      const form = document.getElementById('enrollForm');
+      form.classList.remove('show');
+      document.body.style.overflow = '';
+    }
+    
+    function sendEnrollment() {
+      const name = document.getElementById('sname').value;
+      const school = document.getElementById('sschool').value;
+      const grade = document.getElementById('sgrade').value;
+      const city = document.getElementById('scity').value;
+      const contact = document.getElementById('swhatsapp').value;
+      
+      if (!name || !school || !grade || !city || !contact) {
+        alert("Please fill all required fields.");
+        return;
+      }
+      
+      let message = `📥 Enrollment Request\n`;
+      if (currentEnrollmentType) message += `📌 For: ${currentEnrollmentType}\n`;
+      message += `🧑 Name: ${name}\n🏫 School: ${school}\n🎓 Grade: ${grade}\n🌆 City: ${city}\n📱 Contact: ${contact}`;
+      
+      const url = `https://wa.me/94742663484?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+      closeEnrollForm();
+      
+      // Reset form
+      document.getElementById('sname').value = '';
+      document.getElementById('sschool').value = '';
+      document.getElementById('sgrade').value = '';
+      document.getElementById('scity').value = '';
+      document.getElementById('swhatsapp').value = '';
+    }
+    
+    // Doubt submission function
+    function sendDoubt() {
+      const name = document.getElementById('studentName').value;
+      const grade = document.getElementById('studentGrade').value;
+      const doubt = document.getElementById('doubtText').value;
+      
+      if (!name || !grade || !doubt) {
+        alert("Please fill all required fields.");
+        return;
+      }
+      
+      const message = `❓ Doubt Submission\n🧑 Name: ${name}\n🎓 Grade: ${grade}\n\n${doubt}`;
+      const url = `https://wa.me/94742663484?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+      
+      // Reset form
+      document.getElementById('studentName').value = '';
+      document.getElementById('studentGrade').value = '';
+      document.getElementById('doubtText').value = '';
+      document.getElementById('fileName').textContent = 'No file chosen';
+    }
+    
+    // File upload display
+    document.getElementById('doubtImage').addEventListener('change', function() {
+      const fileName = this.files[0] ? this.files[0].name : 'No file chosen';
+      document.getElementById('fileName').textContent = fileName;
+    });
+    
+    // Animation on scroll
+    const animateElements = document.querySelectorAll('.animate-fade, .animate-slide');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    animateElements.forEach(element => {
+      observer.observe(element);
+    });
+    
+    // Close popup when clicking outside
+    document.getElementById('enrollForm').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeEnrollForm();
+      }
+    });
+    
+    // Set current year in footer
+    document.querySelector('.copyright').innerHTML = `&copy; ${new Date().getFullYear()} ICT with Ahshaan. All rights reserved.`;
+  </script>
+</body>
+</html>
