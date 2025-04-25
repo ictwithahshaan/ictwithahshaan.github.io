@@ -1678,11 +1678,11 @@
         <h3><i class="fas fa-graduation-cap"></i> GRADE - 10</h3>
         <div class="schedule-item">
           <p class="day">Saturday</p>
-          <p class="time">07.00 PM - 08.00 PM</p>
+          <p class="time"> 🕖 07.00 PM - 08.00 PM 🕗</p>
         </div>
         <div class="schedule-item">
           <p class="day">Sunday</p>
-          <p class="time">07.00 PM - 08.00 PM</p>
+          <p class="time"> 🕖 07.00 PM - 08.00 PM 🕗</p>
         </div>
         <button onclick="openEnrollForm('Grade 10')" class="btn btn-accent" style="width: 100%; margin-top: 1.2rem;">
           <i class="fas fa-user-plus"></i> Enroll Now
@@ -1693,11 +1693,11 @@
         <h3><i class="fas fa-graduation-cap"></i> GRADE - 11</h3>
         <div class="schedule-item">
           <p class="day">Saturday</p>
-          <p class="time">08.00 PM - 09.00 PM</p>
+          <p class="time"> 🕗 08.00 PM - 09.00 PM 🕘</p>
         </div>
         <div class="schedule-item">
           <p class="day">Sunday</p>
-          <p class="time">08.00 PM - 09.00 PM</p>
+          <p class="time"> 🕗 08.00 PM - 09.00 PM 🕘</p>
         </div>
         <button onclick="openEnrollForm('Grade 11')" class="btn btn-accent" style="width: 100%; margin-top: 1.2rem;">
           <i class="fas fa-user-plus"></i> Enroll Now
@@ -1974,7 +1974,7 @@
 
     <!-- About Section -->
     <section id="about" class="animate-fade">
-      <h2 class="section-title">ℹ️ About</h2>
+      <h2 class="section-title">About</h2>
       
       <div class="card">
         <div class="about-container">
@@ -2385,7 +2385,7 @@
       
       let message = `📥 Enrollment Request\n`;
       if (currentEnrollmentType) message += `📌 For: ${currentEnrollmentType}\n`;
-      message += `🧑 Name: ${name}\n🏫 School: ${school}\n🎓 Grade: ${grade}\n🌆 City: ${city}\n📱 Contact: ${contact}`;
+      message += `🤖 Name: ${name}\n🏫 School: ${school}\n🎓 Grade: ${grade}\n🌆 City: ${city}\n📱 Contact: ${contact}`;
       
       const url = `https://wa.me/94742663484?text=${encodeURIComponent(message)}`;
       window.open(url, '_blank');
@@ -2410,7 +2410,7 @@
         return;
       }
       
-      const message = `❓ Doubt Submission\n🧑 Name: ${name}\n🎓 Grade: ${grade}\n\n${doubt}`;
+      const message = `❓ Doubt Submission\n🤖 Name: ${name}\n🎓 Grade: ${grade}\n\n${doubt}`;
       const url = `https://wa.me/94742663484?text=${encodeURIComponent(message)}`;
       window.open(url, '_blank');
       
