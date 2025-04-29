@@ -3,79 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta name="description" content="ICT with Ahshaan - Grade 10 & 11 O/L ICT Classes, ahshaanictnotes, Tutorials, and Motivation in Tamil Medium.">
- <meta name="keywords" content="ICT with Ahshaan, Grade 10 ICT, Grade 11 ICT, O/L ICT classes, ICT Sri Lanka, ICT Tamil Medium, ictwithahshaan, ahshaansirict">
-<meta name="author" content="Ahshaan">
+  <meta name="description" content="ICT with Ahshaan - Grade 10 & 11 O/L ICT Classes, ahshaanictnotes, Tutorials, and Motivation in Tamil Medium.">
+  <meta name="keywords" content="ICT with Ahshaan, Grade 10 ICT, Grade 11 ICT, O/L ICT classes, ICT Sri Lanka, ICT Tamil Medium, ictwithahshaan, ahshaansirict">
+  <meta name="author" content="Ahshaan">
   <title>iWA</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-
- :root {
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --secondary: #1e40af;
-      --accent: #f59e0b;
-      --light: #f8fafc;
-      --dark: #1e293b;
-      --text: #334155;
-      --gray: #94a3b8;
-    }
-
-    body.dark-mode {
-      --primary: #3b82f6;
-      --primary-dark: #2563eb;
-      --secondary: #1e3a8a;
-      --accent: #facc15;
-      --light: #0f172a;
-      --dark: #f1f5f9;
-      --text: #e2e8f0;
-      --gray: #94a3b8;
-      background-color: var(--light);
-      color: var(--text);
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: var(--light);
-      color: var(--text);
-      margin: 0;
-      padding: 0;
-      transition: all 0.3s ease;
-    }
-
-    .dark-toggle {
-      position: fixed;
-      bottom: 80px;
-      right: 20px;
-      background: var(--primary);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 1.2rem;
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      z-index: 1001;
-      transition: background 0.3s ease;
-    }
-
-    .dark-toggle:hover {
-      background: var(--primary-dark);
-    }
-
-    header {
-      background: linear-gradient(130deg, var(--primary), var(--secondary));
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 2rem;
-    }
-
     :root {
       --primary: #2563eb;
       --primary-dark: #1d4ed8;
@@ -86,14 +20,8 @@
       --text: #334155;
       --gray: #94a3b8;
     }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    /* Add this new typewriter animation */
+
+   /* Add this new typewriter animation */
     .typewriter-container {
       display: flex;
       justify-content: center;
@@ -154,7 +82,124 @@
       50% { transform: translateY(-5px); }
     }
  /* Add these new styles at the end of your existing styles */
-    
+
+    body.dark-mode {
+      --primary: #3b82f6;
+      --primary-dark: #2563eb;
+      --secondary: #1e3a8a;
+      --accent: #facc15;
+      --light: #0f172a;
+      --dark: #f1f5f9;
+      --text: #e2e8f0;
+      --gray: #94a3b8;
+      background-color: var(--light);
+      color: var(--text);
+    }
+
+    /* Dark mode specific styles */
+    .dark-mode .card,
+    .dark-mode .feature-item,
+    .dark-mode .grade-schedule,
+    .dark-mode .book-card,
+    .dark-mode .achievement-card,
+    .dark-mode .feedback-card,
+    .dark-mode .stat-card {
+      background-color: #1e293b;
+      color: var(--text);
+    }
+
+    .dark-mode .btn-outline {
+      color: var(--dark);
+      border-color: var(--dark);
+    }
+
+    .dark-mode .btn-outline:hover {
+      color: var(--light);
+      background-color: var(--dark);
+    }
+
+    .dark-mode .mobile-view-options {
+      background: #1e293b;
+      color: var(--text);
+      border: 1px solid var(--gray);
+    }
+
+    .dark-mode .view-option {
+      color: var(--text);
+    }
+
+    .dark-mode .view-option:hover {
+      background: rgba(37, 99, 235, 0.2);
+    }
+
+    .dark-mode .view-option i {
+      color: var(--accent);
+    }
+
+    .dark-mode .form-control {
+      background-color: #1e293b;
+      color: var(--text);
+      border-color: var(--gray);
+    }
+
+    .dark-mode .form-control:focus {
+      box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2);
+    }
+
+    .dark-mode .file-upload-btn {
+      background-color: #1e293b;
+      color: var(--text);
+      border-color: var(--gray);
+    }
+
+    .dark-mode .file-upload-btn:hover {
+      background-color: #334155;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+      transition: all 0.3s ease;
+    }
+
+    /* Toggle buttons */
+    .dark-toggle, .mobile-view-toggle {
+      position: fixed;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 1001;
+      transition: all 0.3s ease;
+    }
+
+    .dark-toggle {
+      bottom: 140px;
+      right: 20px;
+      background: var(--primary);
+      color: white;
+    }
+
+    .mobile-view-toggle {
+      bottom: 80px;
+      right: 20px;
+      background: var(--primary);
+      color: white;
+    }
+
+    .dark-toggle:hover, .mobile-view-toggle:hover {
+      background: var(--primary-dark);
+      transform: scale(1.1);
+    }
+
     /* Mobile View Selector Popup */
     .mobile-view-popup {
       position: fixed;
@@ -162,26 +207,6 @@
       right: 20px;
       z-index: 1001;
       display: none;
-    }
-    
-    .mobile-view-toggle {
-      width: 60px;
-      height: 60px;
-      background: var(--primary);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    
-    .mobile-view-toggle:hover {
-      background: var(--primary-dark);
-      transform: scale(1.1);
     }
     
     .mobile-view-options {
@@ -217,69 +242,7 @@
       margin-right: 0.5rem;
       color: var(--primary);
     }
-    
-    /* Mobile specific styles */
-    @media (max-width: 768px) {
-      /* Show mobile view selector only on mobile */
-      .mobile-view-popup {
-        display: block;
-      }
-      
-      /* Adjust header for mobile */
-      header h1 {
-        font-size: 1.8rem;
-      }
-      
-      /* Improve nav for mobile */
-      .nav-container {
-        padding: 0.8rem;
-        gap: 0.5rem;
-        justify-content: flex-start;
-        overflow-x: auto;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-      
-      nav a {
-        padding: 0.5rem 0.8rem;
-        font-size: 0.85rem;
-      }
-      
-      /* Improve card padding */
-      .card {
-        padding: 1.5rem;
-      }
-      
-      /* Adjust hero section */
-      .hero-content h2 {
-        font-size: 1.5rem;
-      }
-      
-      /* Make teacher profile stack vertically */
-      .teacher-profile {
-        flex-direction: column;
-        text-align: center;
-      }
-      
-      /* Improve gallery layout */
-      .gallery {
-        grid-template-columns: 1fr;
-      }
-    }
-    
-    /* Active nav link indicator */
-    nav a.active {
-      background: var(--accent);
-      color: white;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.7;
-      color: var(--text);
-      background-color: var(--light);
-      overflow-x: hidden;
-    }
-    
+
     /* Header Styles */
     header {
       background: linear-gradient(130deg, var(--primary), var(--secondary));
@@ -1518,6 +1481,54 @@
       }
     }
     
+    @media (max-width: 768px) {
+      /* Show mobile view selector only on mobile */
+      .mobile-view-popup {
+        display: block;
+      }
+      
+      /* Adjust header for mobile */
+      header h1 {
+        font-size: 1.8rem;
+      }
+      
+      /* Improve nav for mobile */
+      .nav-container {
+        padding: 0.8rem;
+        gap: 0.5rem;
+        justify-content: flex-start;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      nav a {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.85rem;
+      }
+      
+      /* Improve card padding */
+      .card {
+        padding: 1.5rem;
+      }
+      
+      /* Adjust hero section */
+      .hero-content h2 {
+        font-size: 1.5rem;
+      }
+      
+      /* Make teacher profile stack vertically */
+      .teacher-profile {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      /* Improve gallery layout */
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+    
     @media (max-width: 480px) {
       .header-content {
         padding: 0 1rem;
@@ -1561,17 +1572,7 @@
     <i class="fas fa-moon"></i>
   </button>
 
-  <header>
-    <div class="header-content">
-      <!-- Updated typewriter heading -->
-      <div class="typewriter-container">
-        <div class="typewriter">
-          <h1>Hello Students, Welcome <span class="rocket">🚀</span></h1>
-        </div>
-      </div>
-     
-  </header>
- <!-- Mobile View Selector -->
+  <!-- Mobile View Selector -->
   <div class="mobile-view-popup">
     <div class="mobile-view-options" id="mobileViewOptions">
       <div class="view-option" onclick="setViewport('mobile')">
@@ -1588,6 +1589,18 @@
       <i class="fas fa-eye"></i>
     </div>
   </div>
+
+  <header>
+    <div class="header-content">
+      <!-- Updated typewriter heading -->
+      <div class="typewriter-container">
+        <div class="typewriter">
+          <h1>Hello Students, Welcome <span class="rocket">🚀</span></h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
   <nav>
     <div class="nav-container">
       <a href="#home" class="active"><i class="fas fa-home"></i> Home</a>
@@ -2039,7 +2052,6 @@
             <img src="images/cls4.png" alt="Class Photo">
             <div class="gallery-caption">G11 Unit - 01 Theory Class</div>
           </div>
-
         </div>
       </div>
     </section>
@@ -2326,8 +2338,6 @@
   </div>
 
   <script>
-    // Your existing JavaScript remains the same, add these new functions:
-    
     // Mobile view selector functions
     function toggleViewOptions() {
       const options = document.getElementById('mobileViewOptions');
@@ -2527,16 +2537,34 @@
 
     function toggleDarkMode() {
       document.body.classList.toggle('dark-mode');
-      const icon = document.querySelector('.dark-toggle i');
+      const darkIcon = document.querySelector('.dark-toggle i');
+      const mobileIcon = document.querySelector('.mobile-view-toggle i');
+      
       if (document.body.classList.contains('dark-mode')) {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
+        darkIcon.classList.replace('fa-moon', 'fa-sun');
+        mobileIcon.classList.replace('fa-eye', 'fa-eye-slash');
+        localStorage.setItem('darkMode', 'true');
       } else {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
+        darkIcon.classList.replace('fa-sun', 'fa-moon');
+        mobileIcon.classList.replace('fa-eye-slash', 'fa-eye');
+        localStorage.setItem('darkMode', 'false');
       }
     }
 
+    // Check for saved dark mode preference on load
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.body.classList.add('dark-mode');
+      document.querySelector('.dark-toggle i').classList.replace('fa-moon', 'fa-sun');
+      document.querySelector('.mobile-view-toggle i').classList.replace('fa-eye', 'fa-eye-slash');
+    }
+
+    // Typewriter effect
+    document.addEventListener('DOMContentLoaded', function() {
+      const typewriter = document.querySelector('.typewriter h1');
+      if (typewriter) {
+        typewriter.style.animation = 'typing 3.5s steps(40, end) forwards, blink-caret .75s step-end infinite 3.5s';
+      }
+    });
   </script>
 </body>
 </html>
