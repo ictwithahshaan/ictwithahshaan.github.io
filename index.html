@@ -21,6 +21,26 @@
       --gray: #94a3b8;
     }
 
+    body.dark-mode {
+      --primary: #3b82f6;
+      --primary-dark: #2563eb;
+      --secondary: #1e3a8a;
+      --accent: #facc15;
+      --light: #0f172a;
+      --dark: #f1f5f9;
+      --text: #e2e8f0;
+      --gray: #94a3b8;
+      background-color: var(--light);
+      color: var(--text);
+    }
+
+/* Add this to your CSS */
+.watch-now-btn {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.75rem;
+  margin-top: 0.8rem;
+}
+
    /* Add this new typewriter animation */
     .typewriter-container {
       display: flex;
@@ -83,18 +103,6 @@
     }
  /* Add these new styles at the end of your existing styles */
 
-    body.dark-mode {
-      --primary: #3b82f6;
-      --primary-dark: #2563eb;
-      --secondary: #1e3a8a;
-      --accent: #facc15;
-      --light: #0f172a;
-      --dark: #f1f5f9;
-      --text: #e2e8f0;
-      --gray: #94a3b8;
-      background-color: var(--light);
-      color: var(--text);
-    }
 
     /* Dark mode specific styles */
     .dark-mode .card,
@@ -1481,7 +1489,7 @@
       }
     }
     
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
       /* Show mobile view selector only on mobile */
       .mobile-view-popup {
         display: block;
@@ -1509,7 +1517,7 @@
       
       /* Improve card padding */
       .card {
-        padding: 1.5rem;
+        padding: 1.2rem;
       }
       
       /* Adjust hero section */
@@ -1525,7 +1533,28 @@
       
       /* Improve gallery layout */
       .gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      /* Adjust schedule cards */
+      .grade-schedule {
+        width: 100%;
+        max-width: none;
+      }
+      
+      /* Fix video gallery layout */
+      .video-gallery {
         grid-template-columns: 1fr;
+      }
+      
+      /* Adjust popup width */
+      .popup-content {
+        width: 95%;
+      }
+      
+      /* Fix image sizes */
+      .about-img img {
+        max-width: 100%;
       }
     }
     
@@ -1539,20 +1568,17 @@
       }
       
       .card {
-        padding: 1.2rem;
+        padding: 1rem;
       }
       
       .section-title {
         margin-bottom: 1.5rem;
+        font-size: 1.4rem;
       }
       
       .teacher-img {
-        width: 70px;
-        height: 70px;
-      }
-      
-      .video-gallery {
-        grid-template-columns: 1fr;
+        width: 80px;
+        height: 80px;
       }
       
       .gallery {
@@ -1560,7 +1586,71 @@
       }
       
       .popup-content {
-        padding: 1.2rem;
+        padding: 1rem;
+      }
+      
+      /* Adjust navigation for very small screens */
+      .nav-container {
+        padding: 0.5rem;
+      }
+      
+      nav a {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8rem;
+      }
+      
+      /* Adjust schedule items */
+      .schedule-item p {
+        font-size: 0.85rem;
+      }
+      
+      /* Adjust book info */
+      .book-info h3 {
+        font-size: 1.1rem;
+      }
+      
+      /* Adjust feedback cards */
+      .feedback-card {
+        padding: 1rem;
+      }
+      
+      .feedback-text {
+        font-size: 0.9rem;
+      }
+    }
+    
+    /* Special adjustments for very small devices */
+    @media (max-width: 360px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+      
+      .hero-content h2 {
+        font-size: 1.3rem;
+      }
+      
+      .card h2 {
+        font-size: 1.3rem;
+      }
+      
+      .section-title {
+        font-size: 1.3rem;
+      }
+      
+      .teacher-img {
+        width: 70px;
+        height: 70px;
+      }
+      
+      /* Make buttons full width */
+      .btn {
+        width: 100%;
+        padding: 0.7rem;
+      }
+      
+      /* Adjust form controls */
+      .form-control {
+        padding: 0.7rem;
       }
     }
   </style>
@@ -1643,9 +1733,9 @@
           <div class="video-info">
             <h3>Grade 10 - Unit 03 1st Class</h3>
             <p>Number System</p>
-            <a href="https://www.youtube.com/@ictwithahshaan" target="_blank" class="btn btn-outline" style="margin-top: 1rem; width: 100%;">
-              <i class="fab fa-youtube"></i> Watch Now
-            </a>
+           <a href="https://www.youtube.com/@ictwithahshaan" target="_blank" class="btn btn-outline watch-now-btn">
+  <i class="fab fa-youtube"></i> Watch Now
+</a>
           </div>
         </div>
 
@@ -1658,9 +1748,9 @@
           <div class="video-info">
             <h3>Grade 10 - Unit 04 1st Class</h3>
             <p>Logic Gates</p>
-            <a href="https://www.youtube.com/@ictwithahshaan" target="_blank" class="btn btn-outline" style="margin-top: 1rem; width: 100%;">
-              <i class="fab fa-youtube"></i> Watch Now
-            </a>
+            <a href="https://www.youtube.com/@ictwithahshaan" target="_blank" class="btn btn-outline watch-now-btn">
+  <i class="fab fa-youtube"></i> Watch Now
+</a>
           </div>
         </div>
 
@@ -1673,9 +1763,9 @@
           <div class="video-info">
             <h3>Grade 11 - Unit 05 1st Class</h3>
             <p>Hyper Text Markup Language</p>
-            <a href="https://www.youtube.com/@ictwithahshaan" target="_blank" class="btn btn-outline" style="margin-top: 1rem; width: 100%;">
-              <i class="fab fa-youtube"></i> Watch Now
-            </a>
+           <a href="https://www.youtube.com/@ictwithahshaan" target="_blank" class="btn btn-outline watch-now-btn">
+  <i class="fab fa-youtube"></i> Watch Now
+</a>
           </div>
         </div>
       </div><br>
@@ -2062,7 +2152,7 @@
       
       <div class="card">
         <div class="about-container">
-          <div class="about-img" style="text-align: center;">
+          <div class="about-img" style="text-align: center;"> <br>
             <img src="images/sir.jpg" alt="HM.AHSHAAN" style="max-width: 300px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
             <div style="margin-top: 1.5rem;">
               <h3 style="color: var(--primary);">HM.AHSHAAN</h3>
