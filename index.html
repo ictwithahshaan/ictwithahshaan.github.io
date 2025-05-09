@@ -1634,6 +1634,78 @@ body.dark-mode {
         padding: 1.2rem;
       }
     }
+
+    /* Container */
+    .square-marquee {
+      width: 100%;
+      overflow: hidden;
+      background: #f7f9fc;
+      border: 3px solid #0055ff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 85, 255, 0.2);
+      padding: 10px 0;
+      position: relative;
+    }
+
+    /* Scrolling Track */
+    .marquee-track {
+      display: flex;
+      width: fit-content;
+      animation: scroll-left 15s linear infinite;
+      gap: 40px;
+    }
+
+    /* Marquee Items */
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #333;
+      white-space: nowrap;
+      padding: 5px 15px;
+      border-radius: 8px;
+      background: #ffffff;
+      transition: transform 0.3s;
+    }
+
+    .marquee-item:hover {
+      transform: scale(1.05);
+      background: #eef5ff;
+    }
+
+    .marquee-item.accent {
+      background: #0055ff;
+      color: #fff;
+    }
+
+    .marquee-icon {
+      font-size: 1.2rem;
+    }
+
+    /* Scroll Animation */
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .marquee-track {
+        gap: 25px;
+        animation-duration: 20s;
+      }
+
+      .marquee-item {
+        font-size: 1rem;
+        padding: 4px 10px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1677,6 +1749,26 @@ body.dark-mode {
       <a href="#doubts"><i class="fas fa-question-circle"></i> Doubts</a>
     </div>
   </nav>
+
+  <div class="square-marquee">
+    <div class="marquee-track">
+      <!-- Original Set -->
+      <div class="marquee-item"><span class="marquee-icon">🚀</span><span class="marquee-text">2025 O/L Revision</span></div>
+      <div class="marquee-item accent"><span class="marquee-icon"><i class="fas fa-bell"></i></span><span class="marquee-text">Classes Begin Soon</span></div>
+      <div class="marquee-item"><span class="marquee-icon"><i class="fas fa-users"></i></span><span class="marquee-text">Limited Seats</span></div>
+      <div class="marquee-item accent"><span class="marquee-icon"><i class="fas fa-book"></i></span><span class="marquee-text">Enroll Today</span></div>
+      <div class="marquee-item"><span class="marquee-icon"><i class="fas fa-trophy"></i></span><span class="marquee-text">A Grade Guarantee</span></div>
+      <div class="marquee-item accent"><span class="marquee-icon"><i class="fas fa-video"></i></span><span class="marquee-text">Live Zoom Classes</span></div>
+
+      <!-- Duplicated Set for seamless loop -->
+      <div class="marquee-item"><span class="marquee-icon">🚀</span><span class="marquee-text">2025 O/L Revision</span></div>
+      <div class="marquee-item accent"><span class="marquee-icon"><i class="fas fa-bell"></i></span><span class="marquee-text">Classes Begin Soon</span></div>
+      <div class="marquee-item"><span class="marquee-icon"><i class="fas fa-users"></i></span><span class="marquee-text">Limited Seats</span></div>
+      <div class="marquee-item accent"><span class="marquee-icon"><i class="fas fa-book"></i></span><span class="marquee-text">Enroll Today</span></div>
+      <div class="marquee-item"><span class="marquee-icon"><i class="fas fa-trophy"></i></span><span class="marquee-text">A Grade Guarantee</span></div>
+      <div class="marquee-item accent"><span class="marquee-icon"><i class="fas fa-video"></i></span><span class="marquee-text">Live Zoom Classes</span></div>
+    </div>
+  </div>
 
   <div class="container">
     <!-- Home Section -->
