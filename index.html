@@ -3,1824 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta name="description" content="ICT with Ahshaan - Grade 10 & 11 O/L ICT Classes, ahshaanictnotes, Tutorials, and Motivation in Tamil Medium.">
- <meta name="keywords" content="ICT with Ahshaan, Grade 10 ICT, Grade 11 ICT, O/L ICT classes, ICT Sri Lanka, ICT Tamil Medium, ictwithahshaan, ahshaansirict">
-<meta name="author" content="Ahshaan">
+  <meta name="description" content="ICT with Ahshaan - Grade 10 & 11 O/L ICT Classes, ahshaanictnotes, Tutorials, and Motivation in Tamil Medium.">
+  <meta name="keywords" content="ICT with Ahshaan, Grade 10 ICT, Grade 11 ICT, O/L ICT classes, ICT Sri Lanka, ICT Tamil Medium, ictwithahshaan, ahshaansirict">
+  <meta name="author" content="Ahshaan">
   <title>iWA</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --secondary: #1e40af;
-      --accent: #f59e0b;
-      --light: #f8fafc;
-      --dark: #1e293b;
-      --text: #334155;
-      --gray: #94a3b8;
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-:root {
-  --primary: #2563eb;
-  --primary-dark: #1d4ed8;
-  --secondary: #1e40af;
-  --accent: #f59e0b;
-  --light: #f8fafc;
-  --dark: #1e293b;
-  --text: #334155;
-  --gray: #94a3b8;
-}
-
-body.dark-mode {
-  --primary: #3b82f6;
-  --primary-dark: #2563eb;
-  --secondary: #1e3a8a;
-  --accent: #facc15;
-  --light: #0f172a;
-  --dark: #f1f5f9;
-  --text: #e2e8f0;
-  --gray: #94a3b8;
-  background-color: var(--light);
-  color: var(--text);
-}
-
-/* Dark mode specific styles */
-.dark-mode .card,
-.dark-mode .feature-item,
-.dark-mode .grade-schedule,
-.dark-mode .book-card,
-.dark-mode .achievement-card,
-.dark-mode .feedback-card,
-.dark-mode .stat-card {
-  background-color: #1e293b;
-  color: var(--text);
-}
-
-.dark-mode .btn-outline {
-  color: var(--dark);
-  border-color: var(--dark);
-}
-
-.dark-mode .btn-outline:hover {
-  color: var(--light);
-  background-color: var(--dark);
-}
-
-.dark-mode .mobile-view-options {
-  background: #1e293b;
-  color: var(--text);
-  border: 1px solid var(--gray);
-}
-
-.dark-mode .view-option {
-  color: var(--text);
-}
-
-.dark-mode .view-option:hover {
-  background: rgba(37, 99, 235, 0.2);
-}
-
-.dark-mode .view-option i {
-  color: var(--accent);
-}
-
-.dark-mode .form-control {
-  background-color: #1e293b;
-  color: var(--text);
-  border-color: var(--gray);
-}
-
-.dark-mode .form-control:focus {
-  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2);
-}
-
-.dark-mode .file-upload-btn {
-  background-color: #1e293b;
-  color: var(--text);
-
-}
-
-.dark-mode .file-upload-btn:hover {
-  background-color: #334155;
-}
-
-/* Toggle button styles */
-.dark-toggle {
-  position: fixed;
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  z-index: 1001;
-  transition: all 0.3s ease;
-  bottom: 70px;
-  right: 20px;
-  background: var(--primary);
-  color: white;
-}
-
-.dark-toggle:hover {
-  background: var(--primary-dark);
-  transform: scale(1.1);
-}
-
-    /* Add this new typewriter animation */
-    .typewriter-container {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      overflow: hidden;
-    }
-    
-    .typewriter {
-      position: relative;
-      text-align: center;
-    }
-    
-    .typewriter h1 {
-      display: inline-block;
-      overflow: hidden;
-      white-space: nowrap;
-      margin: 0 auto;
-      letter-spacing: .15em;
-      animation: 
-        typing 3.5s steps(40, end) forwards,
-        blink-caret .75s step-end infinite 3.5s;
-      border-right: .15em solid var(--accent);
-      width: 0;
-    }
-    
-    /* The typing effect */
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-    
-    /* The cursor blink effect */
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: var(--accent); }
-    }
-    
-    /* Rocket animation */
-    .rocket {
-      display: inline-block;
-      position: relative;
-      animation: rocket-fly 5s ease-in-out forwards, rocket-float 2s ease-in-out infinite 3.5s;
-    }
-    
-    /* Rocket coming from below and flying upwards */
-    @keyframes rocket-fly {
-      0% {
-        transform: translateY(100vh); /* Start from below the screen */
-      }
-      100% {
-        transform: translateY(0); /* End at the normal position */
-      }
-    }
-    
-    /* Rocket floating effect */
-    @keyframes rocket-float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
-    }
-
- /* Current Units Progress */
-    .current-units {
-      background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(251, 191, 36, 0.05));
-    }
-
-    .unit-progress {
-      margin-top: 1.5rem;
-    }
-
-    .grade-unit {
-      margin-bottom: 1.5rem;
-    }
-
-    .grade-unit h4 {
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-
-    .progress-bar {
-      height: 30px;
-      background: #e2e8f0;
-      border-radius: 15px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      font-weight: 500;
-      padding: 0 10px;
-    }
-
-
- /* Add these new styles at the end of your existing styles */
-    
-    /* Mobile View Selector Popup */
-    .mobile-view-popup {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 1001;
-      display: none;
-    }
-    
-    .mobile-view-toggle {
-      width: 55px;
-      height: 55px;
-      background: var(--primary);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    
-    .mobile-view-toggle:hover {
-      background: var(--primary-dark);
-      transform: scale(1.1);
-    }
-    
-    .mobile-view-options {
-      position: absolute;
-      bottom: 70px;
-      right: 0;
-      background: white;
-      border-radius: 12px;
-      padding: 1rem;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-      display: none;
-      width: 200px;
-    }
-    
-    .mobile-view-options.show {
-      display: block;
-    }
-    
-    .view-option {
-      padding: 0.8rem;
-      margin: 0.3rem 0;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      font-weight: 500;
-    }
-    
-    .view-option:hover {
-      background: rgba(37, 99, 235, 0.1);
-    }
-    
-    .view-option i {
-      margin-right: 0.5rem;
-      color: var(--primary);
-    }
-    
-    /* Mobile specific styles */
-    @media (max-width: 768px) {
-      /* Show mobile view selector only on mobile */
-      .mobile-view-popup {
-        display: block;
-      }
-      
-      /* Adjust header for mobile */
-      header h1 {
-        font-size: 1.8rem;
-      }
-      
-      /* Improve nav for mobile */
-      .nav-container {
-        padding: 0.8rem;
-        gap: 0.5rem;
-        justify-content: flex-start;
-        overflow-x: auto;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-      
-      nav a {
-        padding: 0.5rem 0.8rem;
-        font-size: 0.85rem;
-      }
-      
-      /* Improve card padding */
-      .card {
-        padding: 1.5rem;
-      }
-      
-      /* Adjust hero section */
-      .hero-content h2 {
-        font-size: 1.5rem;
-      }
-      
-      /* Make teacher profile stack vertically */
-      .teacher-profile {
-        flex-direction: column;
-        text-align: center;
-      }
-      
-      /* Improve gallery layout */
-      .gallery {
-        grid-template-columns: 1fr;
-      }
-    }
-    
-    /* Active nav link indicator */
-    nav a.active {
-      background: var(--accent);
-      color: white;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.7;
-      color: var(--text);
-      background-color: var(--light);
-      overflow-x: hidden;
-    }
-    
-    /* Header Styles */
-    header {
-      background: linear-gradient(130deg, var(--primary), var(--secondary));
-      color: white;
-      padding: 1rem 0;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 4px 7px -1px rgba(0, 0, 0, 0.1);
-    }
-    
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover;
-      opacity: 0.1;
-      z-index: 0;
-    }
-    
-    .header-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      position: relative;
-      z-index: 1;
-    }
-    
-    header h1 {
-      font-size: clamp(1.8rem, 5vw, 2.5rem);
-      margin-bottom: 0.5rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-      animation: fadeInDown 1s ease;
-    }
-    
-    header p {
-      font-size: clamp(0.9rem, 3vw, 1.1rem);
-      opacity: 0.9;
-      animation: fadeIn 1.5s ease;
-      padding: 0 1rem;
-    }
-
-    .logo {
-      display: block;
-      margin: 0 auto;         
-      max-width: 130px;       
-      border-radius: 50%;    
-      object-fit: cover;      
-    }
-
-    .teacher-profile {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-top: 2rem;
-      animation: fadeInUp 1s ease;
-    }
-    
-    .teacher-img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid white;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    
-    .teacher-info {
-      text-align: left;
-    }
-    
-    .teacher-info p {
-      margin: 0.2rem 0;
-    }
-    
-    /* Navigation */
-    nav {
-      background-color: var(--primary-dark);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    
-    .nav-container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0.5rem;
-    }
-    
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      padding: 0.5rem 0.8rem;
-      border-radius: 30px;
-      transition: all 0.3s ease;
-      position: relative;
-      font-size: 0.85rem;
-      white-space: nowrap;
-    }
-    
-    nav a:hover, nav a.active {
-      background-color: var(--accent);
-      transform: translateY(-2px);
-    }
-    
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 0;
-      height: 3px;
-      background: var(--accent);
-      transition: width 0.3s ease;
-    }
-    
-    nav a:hover::after {
-      width: 60%;
-    }
-    
-    /* Mobile Menu Toggle */
-    .menu-toggle {
-      display: none;
-      cursor: pointer;
-      padding: 1rem;
-      position: absolute;
-      top: 0;
-      right: 0;
-      z-index: 101;
-      color: white;
-      font-size: 1.5rem;
-    }
-    
-    /* Main Content */
-    .container {
-      max-width: 1200px;
-      margin: 3rem auto;
-      padding: 0 1.5rem;
-    }
-    
-    .section-title {
-      text-align: center;
-      margin-bottom: 2rem;
-      color: var(--primary);
-      position: relative;
-      font-size: clamp(1.6rem, 4vw, 2rem);
-    }
-    
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: var(--accent);
-      border-radius: 2px;
-    }
-    
-    .card {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-      margin-bottom: 2rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 1px solid rgba(0, 0, 0, 0.05);
-    }
-    
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.12);
-    }
-    
-    .card h2 {
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-      font-size: clamp(1.5rem, 3vw, 1.8rem);
-    }
-    
-    .card h3 {
-      color: var(--secondary);
-      margin: 1.5rem 0 1rem;
-      font-size: 1.2rem;
-    }
-    
-    .card p {
-      margin-bottom: 1.2rem;
-      color: var(--text);
-      font-size: clamp(0.9rem, 2vw, 1rem);
-    }
-    
-    /* Home Section */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-    
-    .hero-img {
-      flex: 1;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-      transition: transform 0.5s ease;
-    }
-    
-    .hero-img:hover {
-      transform: scale(1.02);
-    }
-    
-    .hero-img img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    
-    .hero-content {
-      flex: 1;
-    }
-    
-    .hero-content h2 {
-      font-size: clamp(1.5rem, 4vw, 2.2rem);
-      color: var(--primary);
-      margin-bottom: 1rem;
-      line-height: 1.3;
-    }
-    
-    .hero-content p {
-      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-      margin-bottom: 1.5rem;
-      color: var(--text);
-    }
-    
-    .highlight {
-      background-color: rgba(251, 191, 36, 0.2);
-      padding: 0.2rem 0.5rem;
-      border-radius: 5px;
-      color: var(--dark);
-    }
-    
-    .video-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    
-    .video-card {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease;
-    }
-    
-    .video-card:hover {
-      transform: translateY(-8px);
-    }
-    
-    .video-thumbnail {
-      position: relative;
-      padding-top: 56.25%;
-      overflow: hidden;
-    }
-    
-    .video-thumbnail img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-    
-    .video-card:hover .video-thumbnail img {
-      transform: scale(1.05);
-    }
-    
-    .play-icon {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      font-size: 3rem;
-      opacity: 0.9;
-      transition: all 0.3s ease;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    }
-    
-    .video-card:hover .play-icon {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1.1);
-    }
-    
-    .video-info {
-      padding: 1.2rem;
-    }
-    
-    .video-info h3 {
-      margin-bottom: 0.5rem;
-      color: var(--primary);
-      font-size: 1.1rem;
-    }
-    
-    .video-info p {
-      color: var(--gray);
-      font-size: 0.85rem;
-    }
-    
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 2rem;
-      flex-wrap: wrap;
-    }
-    
-    .social-links a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: var(--primary);
-      color: white;
-      border-radius: 50%;
-      font-size: 1.2rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    
-    .social-links a:hover {
-      background: var(--accent);
-      transform: translateY(-5px) scale(1.1);
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    }
-    
-    /* Class Section */
-    .class-features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-      margin: 2rem 0;
-    }
-    
-    .feature-item {
-      background: rgba(37, 99, 235, 0.05);
-      padding: 1.5rem;
-      border-radius: 12px;
-      text-align: center;
-      border-left: 4px solid var(--accent);
-      transition: transform 0.3s ease;
-    }
-    
-    .feature-item:hover {
-      transform: translateY(-5px);
-      background: rgba(37, 99, 235, 0.1);
-    }
-    
-    .feature-item i {
-      font-size: 2rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-    
-    .feature-item h3 {
-      color: var(--primary);
-      margin-bottom: 0.8rem;
-      font-size: 1.1rem;
-    }
-    
-    .feature-item p {
-      color: var(--text);
-      font-size: 0.85rem;
-    }
-    
-    .schedule {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      margin: 2rem 0;
-      align-items: center;
-    }
-    
-    .grade-schedule {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-      text-align: center;
-      width: 100%;
-      max-width: 300px;
-      transition: transform 0.3s ease;
-      border: 1px solid rgba(0, 0, 0, 0.05);
-    }
-    
-    .grade-schedule:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.12);
-    }
-    
-    .grade-schedule h3 {
-      color: var(--primary);
-      margin-bottom: 1.2rem;
-      font-size: 1.3rem;
-    }
-    
-    .schedule-item {
-      margin-bottom: 1.2rem;
-      padding-bottom: 1.2rem;
-      border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
-    }
-    
-    .schedule-item:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-    
-    .schedule-item p {
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
-    }
-    
-    .schedule-item .day {
-      font-weight: 600;
-      color: var(--secondary);
-    }
-    
-    .schedule-item .time {
-      font-weight: 500;
-      color: var(--primary);
-    }
-    
-    .syllabus-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-    
-    /* Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.8rem 1.5rem;
-      background: var(--primary);
-      color: white;
-      border: none;
-      border-radius: 30px;
-      font-weight: 500;
-      text-decoration: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      font-size: 0.9rem;
-      gap: 0.5rem;
-      width: 100%;
-    }
-    
-    .btn:hover {
-      background: var(--primary-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    }
-    
-    .btn-outline {
-      background: transparent;
-      border: 2px solid var(--primary);
-      color: var(--primary);
-    }
-    
-    .btn-outline:hover {
-      background: var(--primary);
-      color: white;
-    }
-    
-    .btn-accent {
-      background: var(--accent);
-    }
-    
-    .btn-accent:hover {
-      background: #e67e22;
-    }
-    
-    /* Books Section */
-    .books-container {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      margin-top: 2rem;
-      align-items: center;
-    }
-    
-    .book-card {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-      width: 100%;
-      max-width: 320px;
-      transition: transform 0.3s ease;
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .book-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-    }
-    
-    .book-card::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, rgba(251, 191, 36, 0.1), rgba(37, 99, 235, 0.1));
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    
-    .book-card:hover::after {
-      opacity: 1;
-    }
-    
-    .book-cover {
-      height: 200px;
-      overflow: hidden;
-      position: relative;
-    }
-    
-    .book-cover img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-    
-    .book-card:hover .book-cover img {
-      transform: scale(1.05);
-    }
-    
-    .book-badge {
-      position: absolute;
-      top: 0.8rem;
-      right: 0.8rem;
-      background: var(--accent);
-      color: white;
-      padding: 0.2rem 0.6rem;
-      border-radius: 30px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      z-index: 2;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-    
-    .book-info {
-      padding: 1.5rem;
-      position: relative;
-      z-index: 1;
-    }
-    
-    .book-info h3 {
-      color: var(--primary);
-      margin-bottom: 0.8rem;
-      font-size: 1.2rem;
-    }
-    
-    .book-info p {
-      color: var(--text);
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
-    }
-    
-    .book-info .price {
-      font-weight: 700;
-      color: var(--accent);
-      font-size: 1.2rem;
-      margin: 1rem 0;
-    }
-    
-    /* Student Achievements */
-    .achievements-container {
-      margin-top: 1.5rem;
-    }
-
-    .year-section {
-      margin-bottom: 2rem;
-    }
-
-    .year-section h3 {
-      color: var(--primary);
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 1.3rem;
-    }
-
-    .achievement-cards {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-
-    .achievement-card {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      border: 1px solid rgba(0, 0, 0, 0.05);
-    }
-
-    .achievement-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.12);
-    }
-
-    .student-photo {
-      width: 100%;
-      height: 180px;
-      position: relative;
-    }
-
-    .student-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .grade-badge {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: var(--accent);
-      color: white;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 1rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-
-    .student-info {
-      flex: 1;
-      padding: 1.2rem;
-    }
-
-    .student-info h4 {
-      color: var(--primary);
-      margin-bottom: 0.6rem;
-      font-size: 1.1rem;
-    }
-
-    .student-info p {
-      margin: 0.4rem 0;
-      font-size: 0.85rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .student-info i {
-      color: var(--accent);
-      width: 18px;
-    }
-    
-    /* Gallery Section */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 1.2rem;
-      margin-top: 2rem;
-    }
-    
-    .gallery-item {
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-      aspect-ratio: 1;
-      transition: transform 0.3s ease;
-    }
-    
-    .gallery-item:hover {
-      transform: scale(1.03);
-    }
-    
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-    
-    .gallery-item:hover img {
-      transform: scale(1.1);
-    }
-    
-    .gallery-caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(0,0,0,0.7);
-      color: white;
-      padding: 1rem;
-      transform: translateY(100%);
-      transition: transform 0.3s ease;
-      font-size: 0.9rem;
-    }
-    
-    .gallery-item:hover .gallery-caption {
-      transform: translateY(0);
-    }
-    
-    /* About Section */
-    .about-container {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    
-    .about-img {
-      flex: 1;
-      min-width: auto;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-      position: relative;
-      text-align: center;
-    }
-    
-    .about-img img {
-      width: 100%;
-      max-width: 350px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-      transition: transform 0.5s ease;
-    }
-    
-    .about-img:hover img {
-      transform: scale(1.05);
-    }
-    
-    .about-content {
-      flex: 2;
-      min-width: auto;
-    }
-    
-    .about-content h2 {
-      color: var(--primary);
-      margin-bottom: 1.2rem;
-      font-size: 1.8rem;
-    }
-    
-    .about-content p {
-      margin-bottom: 1rem;
-      font-size: 0.95rem;
-    }
-    
-    .teaching-approach {
-      margin-top: 1.5rem;
-    }
-    
-    .approach-item {
-      display: flex;
-      gap: 0.8rem;
-      margin-bottom: 1rem;
-      align-items: flex-start;
-    }
-    
-    .approach-item i {
-      color: var(--accent);
-      font-size: 1.1rem;
-      margin-top: 0.2rem;
-    }
-    
-    /* Doubts Section */
-    .doubt-form {
-      max-width: 700px;
-      margin: 2rem auto;
-    }
-    
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-    
-    .form-group label {
-      display: block;
-      margin-bottom: 0.6rem;
-      font-weight: 500;
-      color: var(--primary);
-      font-size: 0.95rem;
-    }
-    
-    .form-control {
-      width: 100%;
-      padding: 0.8rem 1rem;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      transition: all 0.3s ease;
-      font-family: 'Poppins', sans-serif;
-    }
-    
-    .form-control:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
-    }
-    
-    textarea.form-control {
-      min-height: 150px;
-      resize: vertical;
-    }
-    
-    .file-upload {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    
-    .file-upload-btn {
-      background: #f1f5f9;
-      padding: 0.7rem 1.2rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-weight: 500;
-      color: var(--primary);
-      border: 1px dashed var(--primary);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.9rem;
-    }
-    
-    .file-upload-btn:hover {
-      background: #e2e8f0;
-    }
-    
-    #fileName {
-      color: var(--gray);
-      font-size: 0.85rem;
-    }
-    
-    /* Feedback Section */
-    .feedback-container {
-      margin-top: 2rem;
-    }
-    
-    .feedback-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-    
-    .feedback-card {
-      background: white;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease;
-      position: relative;
-    }
-    
-    .feedback-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-    }
-    
-    .feedback-card::before {
-      content: '"';
-      position: absolute;
-      top: 0.8rem;
-      left: 1.2rem;
-      font-size: 3rem;
-      color: rgba(37, 99, 235, 0.1);
-      font-family: serif;
-      line-height: 1;
-    }
-    
-    .feedback-content {
-      position: relative;
-      z-index: 1;
-    }
-    
-    .feedback-text {
-      font-style: italic;
-      margin-bottom: 1.2rem;
-      color: var(--text);
-      font-size: 0.95rem;
-    }
-    
-    .feedback-author {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-    
-    .feedback-author-img {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--accent);
-    }
-    
-    .feedback-author-info h4 {
-      color: var(--primary);
-      margin-bottom: 0.2rem;
-      font-size: 1rem;
-    }
-    
-    .feedback-author-info p {
-      color: var(--gray);
-      font-size: 0.85rem;
-    }
-    
-    .feedback-rating {
-      color: var(--accent);
-      margin-top: 0.4rem;
-      font-size: 0.9rem;
-    }
-    
-    /* Student Statistics */
-    .stats-container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    
-    .stat-card {
-      background: white;
-      border-radius: 12px;
-      padding: 1.5rem;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease;
-    }
-    
-    .stat-card:hover {
-      transform: translateY(-5px);
-    }
-    
-    .stat-value {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 0.4rem;
-      line-height: 1;
-    }
-    
-    .stat-label {
-      color: var(--text);
-      font-size: 0.9rem;
-    }
-    
-    .stat-grade {
-      font-size: 0.85rem;
-      color: var(--accent);
-      font-weight: 600;
-      margin-top: 0.4rem;
-    }
-    
-    /* Popup */
-    .popup {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.7);
-      z-index: 1000;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    
-    .popup.show {
-      display: flex;
-      opacity: 1;
-    }
-    
-    .popup-content {
-      background: white;
-      border-radius: 15px;
-      padding: 1.5rem;
-      width: 90%;
-      max-width: 500px;
-      max-height: 90vh;
-      overflow-y: auto;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-      transform: translateY(-50px);
-      transition: transform 0.3s ease;
-      position: relative;
-    }
-    
-    .popup.show .popup-content {
-      transform: translateY(0);
-    }
-    
-    .popup-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.5rem;
-    }
-    
-    .popup-header h3 {
-      color: var(--primary);
-      margin: 0;
-      font-size: 1.3rem;
-    }
-    
-    .close-btn {
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: var(--gray);
-      transition: color 0.3s ease;
-      line-height: 1;
-    }
-    
-    .close-btn:hover {
-      color: var(--accent);
-    }
-    
-    /* Footer */
-    footer {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white;
-      text-align: center;
-      padding: 2rem 0;
-      margin-top: 3rem;
-    }
-    
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-    
-    .footer-logo {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 1.2rem;
-    }
-    
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.2rem;
-      margin: 1.5rem 0;
-    }
-    
-    .footer-links a {
-      color: white;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      font-weight: 500;
-      font-size: 0.9rem;
-    }
-    
-    .footer-links a:hover {
-      color: var(--accent);
-      transform: translateY(-2px);
-    }
-    
-    .footer-contact {
-      margin: 1.5rem 0;
-    }
-    
-    .footer-contact p {
-      margin: 0.4rem 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      font-size: 0.9rem;
-    }
-    
-    .copyright {
-      margin-top: 1.5rem;
-      font-size: 0.85rem;
-      opacity: 0.8;
-    }
-    
-    /* Back to Top Button */
-    .back-to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 45px;
-      height: 45px;
-      background: var(--accent);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      cursor: pointer;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-      z-index: 999;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-    
-    .back-to-top.show {
-      opacity: 1;
-      visibility: visible;
-    }
-    
-    .back-to-top:hover {
-      background: #e67e22;
-      transform: translateY(-3px) scale(1.1);
-    }
-    
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    .animate-fade {
-      opacity: 0;
-      animation: fadeIn 1s ease forwards;
-    }
-    
-    .animate-slide {
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 0.8s ease forwards;
-    }
-    
-    .delay-1 { animation-delay: 0.2s; }
-    .delay-2 { animation-delay: 0.4s; }
-    .delay-3 { animation-delay: 0.6s; }
-    .delay-4 { animation-delay: 0.8s; }
-    
-    /* Responsive Design */
-    @media (min-width: 768px) {
-      .hero {
-        flex-direction: row;
-      }
-      
-      .about-container {
-        flex-direction: row;
-      }
-      
-      .schedule {
-        flex-direction: row;
-        justify-content: center;
-      }
-      
-      .books-container {
-        flex-direction: row;
-        justify-content: center;
-      }
-      
-      .achievement-cards {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      }
-      
-      .feedback-grid {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      }
-      
-      .stats-container {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-      }
-      
-      .syllabus-buttons {
-        flex-direction: row;
-        justify-content: center;
-      }
-      
-      .btn {
-        width: auto;
-      }
-      
-      .file-upload {
-        flex-direction: row;
-        align-items: center;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .header-content {
-        padding: 0 1rem;
-      }
-      
-      .container {
-        padding: 0 1rem;
-      }
-      
-      .card {
-        padding: 1.2rem;
-      }
-      
-      .section-title {
-        margin-bottom: 1.5rem;
-      }
-      
-      .teacher-img {
-        width: 70px;
-        height: 70px;
-      }
-      
-      .video-gallery {
-        grid-template-columns: 1fr;
-      }
-      
-      .gallery {
-        grid-template-columns: 1fr;
-      }
-      
-      .popup-content {
-        padding: 1.2rem;
-      }
-    }
-
-    /* Container */
-    .square-marquee {
-      width: 100%;
-      overflow: hidden;
-      background: #f7f9fc;
-      border: 3px solid #0055ff;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0, 85, 255, 0.2);
-      padding: 10px 0;
-      position: relative;
-    }
-
-    /* Scrolling Track */
-    .marquee-track {
-      display: flex;
-      width: fit-content;
-      animation: scroll-left 15s linear infinite;
-      gap: 40px;
-    }
-
-    /* Marquee Items */
-    .marquee-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: #333;
-      white-space: nowrap;
-      padding: 5px 15px;
-      border-radius: 8px;
-      background: #ffffff;
-      transition: transform 0.3s;
-    }
-
-    .marquee-item:hover {
-      transform: scale(1.05);
-      background: #eef5ff;
-    }
-
-    .marquee-item.accent {
-      background: #0055ff;
-      color: #fff;
-    }
-
-    .marquee-icon {
-      font-size: 1.2rem;
-    }
-
-    /* Scroll Animation */
-    @keyframes scroll-left {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .marquee-track {
-        gap: 25px;
-        animation-duration: 20s;
-      }
-
-      .marquee-item {
-        font-size: 1rem;
-        padding: 4px 10px;
-      }
-    }
-
-/* Poster Popup Styles - Square Version */
-.poster-popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8);
-  z-index: 2000;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.poster-popup.show {
-  display: flex;
-  opacity: 1;
-}
-
-.poster-content {
-  position: relative;
-  width: 90%;
-  max-width: 500px; /* Adjust this for maximum size */
-  aspect-ratio: 1/1; /* Ensures square ratio */
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-
-.poster-content img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.poster-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: rgba(0,0,0,0.7);
-  color: white;
-  border: none;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  font-size: 1rem;
-  cursor: pointer;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.poster-close:hover {
-  background: rgba(0,0,0,0.9);
-}
-
-.poster-btn {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 10px 20px;
-  background: var(--accent);
-  color: white;
-  border: none;
-  border-radius: 30px;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
-  z-index: 10;
-  white-space: nowrap;
-}
-
-.poster-btn:hover {
-  background: #e67e22;
-  transform: translateX(-50%) scale(1.05);
-}
-
-@media (max-width: 600px) {
-  .poster-content {
-    width: 95%;
-  }
-  
-  .poster-btn {
-    bottom: 15px;
-    padding: 8px 16px;
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-height: 600px) {
-  .poster-content {
-    max-width: 80vh; /* Prevent poster from being too tall on short screens */
-  }
-}
-
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <div class="header-content">
-      <!-- Updated typewriter heading -->
       <div class="typewriter-container">
         <div class="typewriter">
           <h1>Hello Students, Welcome <span class="rocket">🚀</span></h1>
         </div>
       </div>
-     
+    </div>
   </header>
- <!-- Mobile View Selector -->
+
+  <!-- Mobile View Selector -->
   <div class="mobile-view-popup">
     <div class="mobile-view-options" id="mobileViewOptions">
       <div class="view-option" onclick="setViewport('mobile')">
@@ -1837,25 +39,26 @@ body.dark-mode {
       <i class="fas fa-eye"></i>
     </div>
   </div>
+
   <nav>
     <div class="nav-container">
       <a href="#home" class="active"><i class="fas fa-home"></i> Home</a>
       <a href="#class"><i class="fas fa-chalkboard-teacher"></i> Class</a>
+      <a href="#recordings"><i class="fas fa-video"></i> Recordings</a>
       <a href="#syllabus"><i class="fas fa-book"></i> Syllabus</a>
       <a href="#books"><i class="fas fa-book-open"></i> Books</a>
       <a href="#achievements"><i class="fas fa-trophy"></i> Achievements</a>
       <a href="#gallery"><i class="fas fa-images"></i> Gallery</a>
       <a href="#about"><i class="fas fa-user-tie"></i> About</a>
       <a href="#feedback"><i class="fas fa-comment-alt"></i> Feedback</a>
-      <a href="#doubts"><i class="fas fa-question-circle"></i> Doubts</a>
     </div>
   </nav>
 
- <div class="square-marquee">
+  <div class="square-marquee">
     <div class="marquee-track">
       <!-- Original Set -->
       <div class="marquee-item"><span class="marquee-icon">🚀</span><span class="marquee-text">2025 O/L Revision</span></div>
-      <div class="marquee-item accent"><span class="marquee-icon"><i class="fas fa-bell"></i></span><span class="marquee-text">Classes Start June 1st</span></div>
+      <div class="marquee-item accent"><span class="marquee-icon"><i class="fas fa-bell"></i></span><span class="marquee-text">Classes Start June 29th</span></div>
       <div class="marquee-item"><span class="marquee-icon"><i class="fas fa-users"></i></span><span class="marquee-text">Limited Seats</span></div>
       <div class="marquee-item accent"><span class="marquee-icon"><i class="fas fa-book"></i></span><span class="marquee-text">Enroll Today</span></div>
       <div class="marquee-item"><span class="marquee-icon"><i class="fas fa-trophy"></i></span><span class="marquee-text">A Grade Guarantee</span></div>
@@ -1863,13 +66,13 @@ body.dark-mode {
 
       <!-- Duplicated Set for seamless loop -->
       <div class="marquee-item"><span class="marquee-icon">🚀</span><span class="marquee-text">2025 O/L Revision</span></div>
-      <div class="marquee-item accent"><span class="marquee-icon"><i class="fas fa-bell"></i></span><span class="marquee-text">Classes Start June 1st</span></div>
+      <div class="marquee-item accent"><span class="marquee-icon"><i class="fas fa-bell"></i></span><span class="marquee-text">Classes Start June 29th</span></div>
       <div class="marquee-item"><span class="marquee-icon"><i class="fas fa-users"></i></span><span class="marquee-text">Limited Seats</span></div>
       <div class="marquee-item accent"><span class="marquee-icon"><i class="fas fa-book"></i></span><span class="marquee-text">Enroll Today</span></div>
       <div class="marquee-item"><span class="marquee-icon"><i class="fas fa-trophy"></i></span><span class="marquee-text">A Grade Guarantee</span></div>
       <div class="marquee-item accent"><span class="marquee-icon"><i class="fas fa-video"></i></span><span class="marquee-text">Live Zoom Classes</span></div>
     </div>
-</div>
+  </div>
 
   <div class="container">
     <!-- Home Section -->
@@ -1975,104 +178,320 @@ body.dark-mode {
       </div>
     </section>
 
-<!-- Class Section -->
-<section id="class" class="animate-fade">
-  <h2 class="section-title">Zoom Live Classes - Tamil Medium</h2>
-  
-  <div class="card">
-    <p style="text-align: center; font-size: 1rem; margin-bottom: 1.5rem;">
-     👉 ICT பாடத்தில் உள்ள அலகுகள், கஷ்டம் என்று கூறும் மாணவர்கள் கூட ICT பாடத்தை ஓர் இலகுவான பாடம் என்று கூறும் அளவிற்கு சிறந்த முறையில் கற்பிக்கப்படும். 
-    </p>
-    
-    <!-- Simplified features list in under-under style -->
-    <div style="margin: 1.5rem 0;">
-      <div style="display: flex; align-items: flex-start; margin-bottom: 1rem;">
-        <div style="min-width: 30px; color: var(--accent);">📚</div>
-        <div>
-          <p style="font-weight: 600; color: var(--primary); margin-bottom: 0.2rem;">Complete Coverage</p>
-          <p style="font-size: 0.9rem; color: var(--text);">All syllabus units covered before exams with detailed explanations</p>
-        </div>
-      </div>
+    <!-- Class Section -->
+    <section id="class" class="animate-fade">
+      <h2 class="section-title">Zoom Live Classes - Tamil Medium</h2>
       
-      <div style="display: flex; align-items: flex-start; margin-bottom: 1rem;">
-        <div style="min-width: 30px; color: var(--accent);">💻</div>
-        <div>
-          <p style="font-weight: 600; color: var(--primary); margin-bottom: 0.2rem;">Live Practicals</p>
-          <p style="font-size: 0.9rem; color: var(--text);">Real-time computer demonstrations for better understanding</p>
+      <div class="card">
+        <p style="text-align: center; font-size: 1rem; margin-bottom: 1.5rem;">
+         👉 ICT பாடத்தில் உள்ள அலகுகள், கஷ்டம் என்று கூறும் மாணவர்கள் கூட ICT பாடத்தை ஓர் இலகுவான பாடம் என்று கூறும் அளவிற்கு சிறந்த முறையில் கற்பிக்கப்படும். 
+        </p>
+        
+        <!-- Simplified features list in under-under style -->
+        <div style="margin: 1.5rem 0;">
+          <div style="display: flex; align-items: flex-start; margin-bottom: 1rem;">
+            <div style="min-width: 30px; color: var(--accent);">📚</div>
+            <div>
+              <p style="font-weight: 600; color: var(--primary); margin-bottom: 0.2rem;">Complete Coverage</p>
+              <p style="font-size: 0.9rem; color: var(--text);">All syllabus units covered before exams with detailed explanations</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: flex-start; margin-bottom: 1rem;">
+            <div style="min-width: 30px; color: var(--accent);">💻</div>
+            <div>
+              <p style="font-weight: 600; color: var(--primary); margin-bottom: 0.2rem;">Live Practicals</p>
+              <p style="font-size: 0.9rem; color: var(--text);">Real-time computer demonstrations for better understanding</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: flex-start; margin-bottom: 1rem;">
+            <div style="min-width: 30px; color: var(--accent);">📝</div>
+            <div>
+              <p style="font-weight: 600; color: var(--primary); margin-bottom: 0.2rem;">Assessments</p>
+              <p style="font-size: 0.9rem; color: var(--text);">Regular tests to track progress and identify areas for improvement</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: flex-start; margin-bottom: 1rem;">
+            <div style="min-width: 30px; color: var(--accent);">📄</div>
+            <div>
+              <p style="font-weight: 600; color: var(--primary); margin-bottom: 0.2rem;">Past Papers</p>
+              <p style="font-size: 0.9rem; color: var(--text);">Detailed analysis of previous exam questions and model answers</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: flex-start; margin-bottom: 1rem;">
+            <div style="min-width: 30px; color: var(--accent);">🎥</div>
+            <div>
+              <p style="font-weight: 600; color: var(--primary); margin-bottom: 0.2rem;">Recordings</p>
+              <p style="font-size: 0.9rem; color: var(--text);">Access to all class recordings for revision</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: flex-start;">
+            <div style="min-width: 30px; color: var(--accent);">💬</div>
+            <div>
+              <p style="font-weight: 600; color: var(--primary); margin-bottom: 0.2rem;">Doubt Support</p>
+              <p style="font-size: 0.9rem; color: var(--text);">24/7 WhatsApp support for immediate clarification</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="schedule">
+          <div class="grade-schedule" style="background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(251, 191, 36, 0.05));">
+            <h3><i class="fas fa-graduation-cap"></i> GRADE - 10</h3>
+            <div class="schedule-item">
+              <p class="day">Saturday</p>
+              <p class="time"> 🕖 07.00 PM - 08.00 PM 🕗</p>
+            </div>
+            <div class="schedule-item">
+              <p class="day">Sunday</p>
+              <p class="time"> 🕖 07.00 PM - 08.00 PM 🕗</p>
+            </div>
+            <button onclick="openEnrollForm('Grade 10')" class="btn btn-accent" style="width: 100%; margin-top: 1.2rem;">
+              <i class="fas fa-user-plus"></i> Enroll Now
+            </button>
+          </div>
+          
+          <div class="grade-schedule" style="background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(251, 191, 36, 0.05));">
+            <h3><i class="fas fa-graduation-cap"></i> GRADE - 11</h3>
+            <div class="schedule-item">
+              <p class="day">Saturday</p>
+              <p class="time"> 🕗 08.00 PM - 09.00 PM 🕘</p>
+            </div>
+            <div class="schedule-item">
+              <p class="day">Sunday</p>
+              <p class="time"> 🕗 08.00 PM - 09.00 PM 🕘</p>
+            </div>
+            <button onclick="openEnrollForm('Grade 11')" class="btn btn-accent" style="width: 100%; margin-top: 1.2rem;">
+              <i class="fas fa-user-plus"></i> Enroll Now
+            </button>
+          </div>
+        </div>
+        
+        <div class="syllabus-buttons">
+          <a href="#syllabus" class="btn btn-outline"><i class="fas fa-book"></i> Grade 10 Syllabus</a>
+          <a href="#syllabus" class="btn btn-outline"><i class="fas fa-book"></i> Grade 11 Syllabus</a>
         </div>
       </div>
+    </section>
+
+    <!-- Recordings Section -->
+    <section id="recordings" class="animate-fade">
+      <h2 class="section-title">Class Recordings</h2>
       
-      <div style="display: flex; align-items: flex-start; margin-bottom: 1rem;">
-        <div style="min-width: 30px; color: var(--accent);">📝</div>
-        <div>
-          <p style="font-weight: 600; color: var(--primary); margin-bottom: 0.2rem;">Assessments</p>
-          <p style="font-size: 0.9rem; color: var(--text);">Regular tests to track progress and identify areas for improvement</p>
+      <div class="card">
+        <div class="recordings-container">
+          <div class="recording-categories">
+            <button class="recording-category-btn active" data-category="free">
+              <i class="fas fa-unlock"></i> Free Classes
+            </button>
+            <button class="recording-category-btn" data-category="g10">
+              <i class="fas fa-lock"></i> Grade 10 Paid
+            </button>
+            <button class="recording-category-btn" data-category="g11">
+              <i class="fas fa-lock"></i> Grade 11 Paid
+            </button>
+            <button class="recording-category-btn" data-category="project">
+              <i class="fas fa-lock"></i> Project Classes
+            </button>
+          </div>
+          
+          <!-- Free Classes Content (visible by default) -->
+          <div class="recording-content" id="free-content">
+            <h3><i class="fas fa-unlock"></i> Free Classes</h3>
+            <p>Access our free introductory classes for each unit.</p>
+            
+            <div class="unit-recordings">
+              <div class="unit-section">
+                <h4>Grade 10 - Unit 1: தகவல் மற்றும் தொடர்பாடல் தொழினுட்பவியல்</h4>
+                <div class="recording-item">
+                  <div class="recording-info">
+                    <i class="fas fa-play-circle"></i>
+                    <span>Class 1: Introduction to ICT</span>
+                  </div>
+                  <button class="btn btn-outline watch-btn" data-video="https://www.youtube.com/embed/example1">
+                    <i class="fas fa-play"></i> Watch Now
+                  </button>
+                </div>
+                <div class="recording-item">
+                  <div class="recording-info">
+                    <i class="fas fa-play-circle"></i>
+                    <span>Class 2: Communication Technologies</span>
+                  </div>
+                  <button class="btn btn-outline watch-btn" data-video="https://www.youtube.com/embed/example2">
+                    <i class="fas fa-play"></i> Watch Now
+                  </button>
+                </div>
+              </div>
+              
+              <div class="unit-section">
+                <h4>Grade 10 - Unit 3: கணினியில் தரவுகள் எடுத்துக்காட்டப்படும் முறைகள்</h4>
+                <div class="recording-item">
+                  <div class="recording-info">
+                    <i class="fas fa-play-circle"></i>
+                    <span>Class 1: Number Systems</span>
+                  </div>
+                  <button class="btn btn-outline watch-btn" data-video="https://www.youtube.com/embed/example3">
+                    <i class="fas fa-play"></i> Watch Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Password Protected Content (hidden by default) -->
+          <div class="password-protected" id="password-protected">
+            <div class="password-form">
+              <h3><i class="fas fa-lock"></i> Password Required</h3>
+              <p>Please enter the password provided to access these recordings:</p>
+              
+              <div class="form-group">
+                <label for="recording-password">Password</label>
+                <div class="password-input">
+                  <input type="password" id="recording-password" class="form-control" placeholder="Enter password">
+                  <i class="fas fa-eye toggle-password"></i>
+                </div>
+                <p id="password-error" class="error-message"></p>
+              </div>
+              
+              <button class="btn btn-accent" id="submit-password">Submit</button>
+            </div>
+          </div>
+          
+          <!-- Grade 10 Paid Content (hidden by default) -->
+          <div class="recording-content hidden" id="g10-content">
+            <div class="video-player-container hidden" id="video-player">
+              <div class="video-player-header">
+                <h3 id="video-title">Video Player</h3>
+                <button class="close-player"><i class="fas fa-times"></i></button>
+              </div>
+              <div class="video-wrapper">
+                <iframe id="video-frame" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+            
+            <h3><i class="fas fa-graduation-cap"></i> Grade 10 Paid Recordings</h3>
+            <p>Complete access to all Grade 10 class recordings.</p>
+            
+            <div class="unit-recordings">
+              <div class="unit-section">
+                <h4>Unit 1: தகவல் மற்றும் தொடர்பாடல் தொழினுட்பவியல்</h4>
+                <div class="recording-item">
+                  <div class="recording-info">
+                    <i class="fas fa-play-circle"></i>
+                    <span>Class 1: Introduction to ICT</span>
+                  </div>
+                  <button class="btn btn-outline watch-btn" data-video="https://www.youtube.com/embed/example1">
+                    <i class="fas fa-play"></i> Watch Now
+                  </button>
+                </div>
+                <div class="recording-item">
+                  <div class="recording-info">
+                    <i class="fas fa-play-circle"></i>
+                    <span>Class 2: Communication Technologies</span>
+                  </div>
+                  <button class="btn btn-outline watch-btn" data-video="https://www.youtube.com/embed/example2">
+                    <i class="fas fa-play"></i> Watch Now
+                  </button>
+                </div>
+              </div>
+              
+              <div class="unit-section">
+                <h4>Unit 3: கணினியில் தரவுகள் எடுத்துக்காட்டப்படும் முறைகள்</h4>
+                <div class="recording-item">
+                  <div class="recording-info">
+                    <i class="fas fa-play-circle"></i>
+                    <span>Class 1: Number Systems</span>
+                  </div>
+                  <button class="btn btn-outline watch-btn" data-video="https://www.youtube.com/embed/example3">
+                    <i class="fas fa-play"></i> Watch Now
+                  </button>
+                </div>
+                <div class="recording-item">
+                  <div class="recording-info">
+                    <i class="fas fa-play-circle"></i>
+                    <span>Class 2: Binary Operations</span>
+                  </div>
+                  <button class="btn btn-outline watch-btn" data-video="https://www.youtube.com/embed/example4">
+                    <i class="fas fa-play"></i> Watch Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Grade 11 Paid Content (hidden by default) -->
+          <div class="recording-content hidden" id="g11-content">
+            <h3><i class="fas fa-graduation-cap"></i> Grade 11 Paid Recordings</h3>
+            <p>Complete access to all Grade 11 class recordings.</p>
+            
+            <div class="unit-recordings">
+              <div class="unit-section">
+                <h4>Unit 1: பிரச்சினைகளைத் தீர்ப்பதற்குச் செய்நிரல்களை எழுதுதல்</h4>
+                <div class="recording-item">
+                  <div class="recording-info">
+                    <i class="fas fa-play-circle"></i>
+                    <span>Class 1: Problem Solving</span>
+                  </div>
+                  <button class="btn btn-outline watch-btn" data-video="https://www.youtube.com/embed/example5">
+                    <i class="fas fa-play"></i> Watch Now
+                  </button>
+                </div>
+              </div>
+              
+              <div class="unit-section">
+                <h4>Unit 5: எளிய இணையத்தளங்களை வடிவமைத்தல்</h4>
+                <div class="recording-item">
+                  <div class="recording-info">
+                    <i class="fas fa-play-circle"></i>
+                    <span>Class 1: HTML Basics</span>
+                  </div>
+                  <button class="btn btn-outline watch-btn" data-video="https://www.youtube.com/embed/example6">
+                    <i class="fas fa-play"></i> Watch Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project Classes Content (hidden by default) -->
+          <div class="recording-content hidden" id="project-content">
+            <h3><i class="fas fa-laptop-code"></i> Project Classes</h3>
+            <p>Special project-based learning sessions.</p>
+            
+            <div class="unit-recordings">
+              <div class="unit-section">
+                <h4>Web Development Projects</h4>
+                <div class="recording-item">
+                  <div class="recording-info">
+                    <i class="fas fa-play-circle"></i>
+                    <span>Class 1: Portfolio Website</span>
+                  </div>
+                  <button class="btn btn-outline watch-btn" data-video="https://www.youtube.com/embed/example7">
+                    <i class="fas fa-play"></i> Watch Now
+                  </button>
+                </div>
+              </div>
+              
+              <div class="unit-section">
+                <h4>Database Projects</h4>
+                <div class="recording-item">
+                  <div class="recording-info">
+                    <i class="fas fa-play-circle"></i>
+                    <span>Class 1: Library System</span>
+                  </div>
+                  <button class="btn btn-outline watch-btn" data-video="https://www.youtube.com/embed/example8">
+                    <i class="fas fa-play"></i> Watch Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      
-      <div style="display: flex; align-items: flex-start; margin-bottom: 1rem;">
-        <div style="min-width: 30px; color: var(--accent);">📄</div>
-        <div>
-          <p style="font-weight: 600; color: var(--primary); margin-bottom: 0.2rem;">Past Papers</p>
-          <p style="font-size: 0.9rem; color: var(--text);">Detailed analysis of previous exam questions and model answers</p>
-        </div>
-      </div>
-      
-      <div style="display: flex; align-items: flex-start; margin-bottom: 1rem;">
-        <div style="min-width: 30px; color: var(--accent);">🎥</div>
-        <div>
-          <p style="font-weight: 600; color: var(--primary); margin-bottom: 0.2rem;">Recordings</p>
-          <p style="font-size: 0.9rem; color: var(--text);">Access to all class recordings for revision</p>
-        </div>
-      </div>
-      
-      <div style="display: flex; align-items: flex-start;">
-        <div style="min-width: 30px; color: var(--accent);">💬</div>
-        <div>
-          <p style="font-weight: 600; color: var(--primary); margin-bottom: 0.2rem;">Doubt Support</p>
-          <p style="font-size: 0.9rem; color: var(--text);">24/7 WhatsApp support for immediate clarification</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="schedule">
-      <div class="grade-schedule" style="background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(251, 191, 36, 0.05));">
-        <h3><i class="fas fa-graduation-cap"></i> GRADE - 10</h3>
-        <div class="schedule-item">
-          <p class="day">Saturday</p>
-          <p class="time"> 🕖 07.00 PM - 08.00 PM 🕗</p>
-        </div>
-        <div class="schedule-item">
-          <p class="day">Sunday</p>
-          <p class="time"> 🕖 07.00 PM - 08.00 PM 🕗</p>
-        </div>
-        <button onclick="openEnrollForm('Grade 10')" class="btn btn-accent" style="width: 100%; margin-top: 1.2rem;">
-          <i class="fas fa-user-plus"></i> Enroll Now
-        </button>
-      </div>
-      
-      <div class="grade-schedule" style="background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(251, 191, 36, 0.05));">
-        <h3><i class="fas fa-graduation-cap"></i> GRADE - 11</h3>
-        <div class="schedule-item">
-          <p class="day">Saturday</p>
-          <p class="time"> 🕗 08.00 PM - 09.00 PM 🕘</p>
-        </div>
-        <div class="schedule-item">
-          <p class="day">Sunday</p>
-          <p class="time"> 🕗 08.00 PM - 09.00 PM 🕘</p>
-        </div>
-        <button onclick="openEnrollForm('Grade 11')" class="btn btn-accent" style="width: 100%; margin-top: 1.2rem;">
-          <i class="fas fa-user-plus"></i> Enroll Now
-        </button>
-      </div>
-    </div>
-    
-    <div class="syllabus-buttons">
-      <a href="#syllabus" class="btn btn-outline"><i class="fas fa-book"></i> Grade 10 Syllabus</a>
-      <a href="#syllabus" class="btn btn-outline"><i class="fas fa-book"></i> Grade 11 Syllabus</a>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- Syllabus Section -->
     <section id="syllabus" class="animate-fade">
@@ -2173,7 +592,7 @@ body.dark-mode {
               <h3>ICT Grade 10 - Complete Guide (Tamil Medium)</h3>
               <p>தரம் 10 பாடப்பரப்பிலுள்ள 09 அலகுகளையும் Short Notes ஆக மாற்றி இந்த புத்தகம் வடிவமைக்கப்ப்ட்டுள்ளது.
 </p>
-              <div class="price">Rs. 1,200</div>
+              <div class="price">Rs. 1,500</div>
               <button onclick="openEnrollForm('Grade 10 Book')" class="btn btn-accent" style="width: 100%;">
                 <i class="fas fa-shopping-cart"></i> Order Now
               </button>
@@ -2189,7 +608,7 @@ body.dark-mode {
               <h3>ICT Grade 11 - Complete Guide (Tamil Medium)</h3>
               <p>தரம் 11 பாடப்பரப்பிலுள்ள 06 அலகுகளையும் Short Notes ஆக மாற்றி இந்த புத்தகம் வடிவமைக்கப்ப்ட்டுள்ளது.
 </p>
-              <div class="price">Rs. 1,200</div>
+              <div class="price">Rs. 1,500</div>
               <button onclick="openEnrollForm('Grade 11 Book')" class="btn btn-accent" style="width: 100%;">
                 <i class="fas fa-shopping-cart"></i> Order Now
               </button>
@@ -2329,7 +748,6 @@ body.dark-mode {
             <img src="images/cls4.png" alt="Class Photo">
             <div class="gallery-caption">G11 Unit - 01 Theory Class</div>
           </div>
-
         </div>
       </div>
     </section>
@@ -2483,58 +901,6 @@ body.dark-mode {
         </div>
       </div>
     </section>
-
-    <!-- Doubts Section -->
-    <section id="doubts" class="animate-fade">
-      <h2 class="section-title">❓ Ask Your Doubts</h2>
-      
-      <div class="card">
-        <div class="doubt-form">
-          <p style="text-align: center; margin-bottom: 1.5rem;">
-            Get personalized clarification on any ICT concept within 24 hours.
-          </p>
-          
-          <div class="form-group">
-            <label for="studentName"><i class="fas fa-user"></i> Your Name</label>
-            <input type="text" id="studentName" class="form-control" placeholder="Enter your full name">
-          </div>
-          
-          <div class="form-group">
-            <label for="studentGrade"><i class="fas fa-graduation-cap"></i> Grade</label>
-            <select id="studentGrade" class="form-control">
-              <option value="">Select your grade</option>
-              <option value="10">Grade 10</option>
-              <option value="11">Grade 11</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          
-          <div class="form-group">
-            <label for="doubtText"><i class="fas fa-question-circle"></i> Your Doubt</label>
-            <textarea id="doubtText" class="form-control" placeholder="Describe your doubt in detail..."></textarea>
-          </div>
-          
-          <div class="form-group">
-            <label><i class="fas fa-image"></i> Upload Screenshot (Optional)</label>
-            <div class="file-upload">
-              <input type="file" id="doubtImage" style="display: none;">
-              <label for="doubtImage" class="file-upload-btn">
-                <i class="fas fa-cloud-upload-alt"></i> Choose File
-              </label>
-              <span id="fileName">No file chosen</span>
-            </div>
-          </div>
-          
-          <button onclick="sendDoubt()" class="btn btn-accent" style="width: 100%; margin-top: 1rem;">
-            <i class="fas fa-paper-plane"></i> Submit Doubt
-          </button>
-          
-          <p style="text-align: center; margin-top: 1.2rem; color: var(--gray); font-size: 0.85rem;">
-            <i class="fas fa-info-circle"></i> Responses typically within 2-12 hours via WhatsApp
-          </p>
-        </div>
-      </div>
-    </section>
   </div>
 
   <!-- Enrollment Popup -->
@@ -2591,13 +957,13 @@ body.dark-mode {
       <div class="footer-links">
         <a href="#home"><i class="fas fa-home"></i> Home</a>
         <a href="#class"><i class="fas fa-chalkboard-teacher"></i> Classes</a>
+        <a href="#recordings"><i class="fas fa-video"></i> Recordings</a>
         <a href="#syllabus"><i class="fas fa-book"></i> Syllabus</a>
         <a href="#books"><i class="fas fa-book-open"></i> Books</a>
         <a href="#achievements"><i class="fas fa-trophy"></i> Achievements</a>
         <a href="#gallery"><i class="fas fa-images"></i> Gallery</a>
         <a href="#about"><i class="fas fa-info-circle"></i> About</a>
         <a href="#feedback"><i class="fas fa-comment-alt"></i> Feedback</a>
-        <a href="#doubts"><i class="fas fa-question"></i> Doubts</a>
       </div>
       
       <div class="social-links">
@@ -2615,265 +981,15 @@ body.dark-mode {
     <i class="fas fa-arrow-up"></i>
   </div>
 
-<!-- Poster Popup -->
-<div id="posterPopup" class="poster-popup">
-  <div class="poster-content">
-    <button class="poster-close" onclick="closePoster()">&times;</button>
-    <img src="images/classposter.jpg" alt="Class Poster">
-    <button class="poster-btn" onclick="enrollFromPoster()">Enroll Now</button>
+  <!-- Poster Popup -->
+  <div id="posterPopup" class="poster-popup">
+    <div class="poster-content">
+      <button class="poster-close" onclick="closePoster()">&times;</button>
+      <img src="images/classposter.jpg" alt="Class Poster">
+      <button class="poster-btn" onclick="enrollFromPoster()">Enroll Now</button>
+    </div>
   </div>
-</div>
 
-  <script>
-    // Your existing JavaScript remains the same, add these new functions:
-    
-    // Mobile view selector functions
-    function toggleViewOptions() {
-      const options = document.getElementById('mobileViewOptions');
-      options.classList.toggle('show');
-    }
-    
-    function setViewport(type) {
-      let content = '';
-      switch(type) {
-        case 'mobile':
-          content = 'width=device-width, initial-scale=1.0';
-          break;
-        case 'tablet':
-          content = 'width=768, initial-scale=1.0';
-          break;
-        case 'desktop':
-          content = 'width=1200, initial-scale=1.0';
-          break;
-      }
-      
-      document.querySelector('meta[name="viewport"]').setAttribute('content', content);
-      document.getElementById('mobileViewOptions').classList.remove('show');
-    }
-    
-    // Improved navigation highlighting
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('nav a');
-    
-    window.addEventListener('scroll', () => {
-      let current = '';
-      
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        
-        if (pageYOffset >= (sectionTop - 150)) {
-          current = section.getAttribute('id');
-        }
-      });
-      
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-          link.classList.add('active');
-        }
-      });
-    });
-    
-    // Close mobile view options when clicking outside
-    document.addEventListener('click', function(e) {
-      const options = document.getElementById('mobileViewOptions');
-      const toggle = document.querySelector('.mobile-view-toggle');
-      
-      if (!toggle.contains(e.target) && !options.contains(e.target)) {
-        options.classList.remove('show');
-      }
-    });
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('nav a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        // Remove active class from all nav items
-        document.querySelectorAll('nav a').forEach(navItem => {
-          navItem.classList.remove('active');
-        });
-        
-        // Add active class to clicked nav item
-        this.classList.add('active');
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        window.scrollTo({
-          top: targetElement.offsetTop - 80,
-          behavior: 'smooth'
-        });
-      });
-    });
-    
-    // Show back to top button when scrolling
-    window.addEventListener('scroll', function() {
-      const backToTop = document.getElementById('backToTop');
-      if (window.pageYOffset > 300) {
-        backToTop.classList.add('show');
-      } else {
-        backToTop.classList.remove('show');
-      }
-    });
-    
-    // Back to top functionality
-    document.getElementById('backToTop').addEventListener('click', function() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-    
-    // Enrollment form functions
-    let currentEnrollmentType = '';
-    
-    function openEnrollForm(type = '') {
-      currentEnrollmentType = type;
-      const form = document.getElementById('enrollForm');
-      form.classList.add('show');
-      document.body.style.overflow = 'hidden';
-    }
-    
-    function closeEnrollForm() {
-      const form = document.getElementById('enrollForm');
-      form.classList.remove('show');
-      document.body.style.overflow = '';
-    }
-    
-    function sendEnrollment() {
-      const name = document.getElementById('sname').value;
-      const school = document.getElementById('sschool').value;
-      const grade = document.getElementById('sgrade').value;
-      const city = document.getElementById('scity').value;
-      const contact = document.getElementById('swhatsapp').value;
-      
-      if (!name || !school || !grade || !city || !contact) {
-        alert("Please fill all required fields.");
-        return;
-      }
-      
-      let message = `📥 Enrollment Request\n`;
-      if (currentEnrollmentType) message += `📌 For: ${currentEnrollmentType}\n`;
-      message += `🤖 Name: ${name}\n🏫 School: ${school}\n🎓 Grade: ${grade}\n🌆 City: ${city}\n📱 Contact: ${contact}`;
-      
-      const url = `https://wa.me/94742663484?text=${encodeURIComponent(message)}`;
-      window.open(url, '_blank');
-      closeEnrollForm();
-      
-      // Reset form
-      document.getElementById('sname').value = '';
-      document.getElementById('sschool').value = '';
-      document.getElementById('sgrade').value = '';
-      document.getElementById('scity').value = '';
-      document.getElementById('swhatsapp').value = '';
-    }
-    
-    // Doubt submission function
-    function sendDoubt() {
-      const name = document.getElementById('studentName').value;
-      const grade = document.getElementById('studentGrade').value;
-      const doubt = document.getElementById('doubtText').value;
-      
-      if (!name || !grade || !doubt) {
-        alert("Please fill all required fields.");
-        return;
-      }
-      
-      const message = `❓ Doubt Submission\n🤖 Name: ${name}\n🎓 Grade: ${grade}\n\n${doubt}`;
-      const url = `https://wa.me/94742663484?text=${encodeURIComponent(message)}`;
-      window.open(url, '_blank');
-      
-      // Reset form
-      document.getElementById('studentName').value = '';
-      document.getElementById('studentGrade').value = '';
-      document.getElementById('doubtText').value = '';
-      document.getElementById('fileName').textContent = 'No file chosen';
-    }
-    
-    // File upload display
-    document.getElementById('doubtImage').addEventListener('change', function() {
-      const fileName = this.files[0] ? this.files[0].name : 'No file chosen';
-      document.getElementById('fileName').textContent = fileName;
-    });
-    
-    // Animation on scroll
-    const animateElements = document.querySelectorAll('.animate-fade, .animate-slide');
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = 1;
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, { threshold: 0.1 });
-    
-    animateElements.forEach(element => {
-      observer.observe(element);
-    });
-    
-    // Close popup when clicking outside
-    document.getElementById('enrollForm').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeEnrollForm();
-      }
-    });
-    
-    // Set current year in footer
-    document.querySelector('.copyright').innerHTML = `&copy; ${new Date().getFullYear()} ICT with Ahshaan. All rights reserved.`;
-
-function toggleDarkMode() {
-  document.body.classList.toggle('dark-mode');
-  const darkIcon = document.querySelector('.dark-toggle i');
-  
-  if (document.body.classList.contains('dark-mode')) {
-    darkIcon.classList.replace('fa-moon', 'fa-sun');
-    localStorage.setItem('darkMode', 'true');
-  } else {
-    darkIcon.classList.replace('fa-sun', 'fa-moon');
-    localStorage.setItem('darkMode', 'false');
-  }
-}
-
-// Check for saved dark mode preference on load
-if (localStorage.getItem('darkMode') === 'true') {
-  document.body.classList.add('dark-mode');
-  document.querySelector('.dark-toggle i').classList.replace('fa-moon', 'fa-sun');
-}
-
-// Poster functions
-function showPoster() {
-  // Check if poster was already shown in this session
-  if(sessionStorage.getItem('posterShown') !== 'true') {
-    setTimeout(() => {
-      document.getElementById('posterPopup').classList.add('show');
-      document.body.style.overflow = 'hidden';
-      sessionStorage.setItem('posterShown', 'true');
-    }, 1000); // Show after 1 second delay
-  }
-}
-
-function closePoster() {
-  document.getElementById('posterPopup').classList.remove('show');
-  document.body.style.overflow = '';
-}
-
-function enrollFromPoster() {
-  closePoster();
-  openEnrollForm('From Poster');
-}
-
-// Show poster when page loads
-window.addEventListener('load', showPoster);
-
-  </script>
-
-<!-- Dark Mode Toggle -->
-<button class="dark-toggle" onclick="toggleDarkMode()">
-  <i class="fas fa-moon"></i>
-</button>
-
+  <script src="script.js"></script>
 </body>
 </html>
